@@ -8,3 +8,6 @@ aux/
 *.nav
 *.snm
 *.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

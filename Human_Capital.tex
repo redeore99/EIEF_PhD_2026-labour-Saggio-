@@ -24,7 +24,7 @@
 
 \title{Human Capital}
 \author[]{Raffaele Saggio}
-\institute{\small{Econ 560}}
+\institute{\small{Labor Economics-EIEF}}
 
 \begin{document}
 
@@ -85,11 +85,11 @@
 \frame{\frametitle{A Causal Model of Schooling Investments}
 \begin{itemize}
 \begin{small}
-\item To investigate the returns to education, consider a static model of schooling investment, as in Card (1999) Handbook Chapter (almost 7K citations!).
+\item To investigate the returns to education, consider a static model of schooling investment, as in Card (1999), Handbook of Labor Economics (HOLE) chapter.
 \medskip
 \item Consider an individual deciding how long to stay in school, $S$.
 \medskip
-\item Schooling maps to earnings according to the differentiable function $y(S)$ where $y'(S)\equiv \dfrac{\partial y(S)}{\partial S}$ denote the marginal return of schooling. 
+\item Schooling maps to earnings according to the differentiable function $y(S)$ where $y'(S)\equiv \dfrac{\partial y(S)}{\partial S}$ denotes the marginal return to schooling.
 \medskip 
 \item An individual's goal is to maximize the present discounted value of earnings ($y(S))$ given a discount rate of $r$.
 
@@ -98,7 +98,7 @@
 \end{displaymath}
 where $PDV(S)\equiv \int_{S}^{\infty}{e^{-rt}y(S)}dt$.
 \medskip
-\item Idea: individuals discount future earnings at rate $r$ and decide how many years to spent in school before earning some amounts of money.
+\item Idea: individuals discount future earnings at rate $r$ and decide how many years to spend in school before earning some amount of money.
 \medskip
 \item What are we implicitly assuming here?
 %% RA money
@@ -350,7 +350,7 @@ b = \beta - \gamma E[S_{i}^{*}] -\gamma \dfrac{\sigma_{\alpha,r}}{\sigma^{2}_{r}
 \vspace{0.05in}
 \item This change affected nearly half the population
 \vspace{0.05in}
-\item Oreopolous (2006) uses this change in an RD design, finds large returns
+\item Oreopoulos (2006) uses this change in an RD design, finds large returns
 \vspace{0.05in}
 \item Later challenged/updated by Devereux and Hart (2010)
 \vspace{0.05in}
@@ -386,18 +386,18 @@ b = \beta - \gamma E[S_{i}^{*}] -\gamma \dfrac{\sigma_{\alpha,r}}{\sigma^{2}_{r}
 }
 
 \begin{frame}[plain] % plain removes header/footer
-  \frametitle{Devereaux and Hart 2010}
-  \includegraphics[pages=1,scale=0.9]{aux/devereux_hart_2010_f8.pdf}
+  \frametitle{Devereux and Hart 2010}
+  \includegraphics[page=1,scale=0.9]{aux/devereux_hart_2010_f8.pdf}
 \end{frame}
 
 \begin{frame}[plain] % plain removes header/footer
-  \frametitle{Devereaux and Hart 2010}
-  \includegraphics[pages=1,scale=0.9]{aux/devereux_hart_2010_f7.pdf}
+  \frametitle{Devereux and Hart 2010}
+  \includegraphics[page=1,scale=0.9]{aux/devereux_hart_2010_f7.pdf}
 \end{frame}
 
 \begin{frame}[plain] % plain removes header/footer
   \frametitle{Grenet 2013}
-  \includegraphics[pages=1,scale=0.9]{aux/grenet_2013_t3.pdf}
+  \includegraphics[page=1,scale=0.9]{aux/grenet_2013_t3.pdf}
 \end{frame}
 
 
@@ -600,7 +600,7 @@ E[Y_{i} | D_{i}=j,C_{i}=c,A_{i}=a] - E[Y_{i} | D_{i}=k,C_{i}=c,A_{i}=a]
 \setbeamercolor{background canvas}{bg=}
 \includepdf{aux/dk2_t5.pdf}
 }
-\begin{frame}{DK has been also replicated in Texas (w/ much better data) by Mountjoy and Hickman (2021)}
+\begin{frame}{DK has also been replicated in Texas (w/ much better data) by Mountjoy and Hickman (2021)}
   \includegraphics[width=1\textwidth]{aux/jack1.pdf}
 \end{frame}
 \begin{frame}{Mountjoy and Hickman (2021)}
@@ -623,228 +623,6 @@ E[Y_{i} | D_{i}=j,C_{i}=c,A_{i}=a] - E[Y_{i} | D_{i}=k,C_{i}=c,A_{i}=a]
 \begin{frame}{}
   \includegraphics[width=1\textwidth]{aux/dk2002concl.png}
 \end{frame}
-\section{Dynamics}
-\frame{\frametitle{The Careers of Young Men: Keane and Wolpin (JPE 1997)}
-\begin{itemize}
-\begin{small}
-\item Now we'll shift gears and consider a structural model more tightly linked to the theory of human capital investment
-\vspace{0.05in}
-\item Keane and Wolpin (JPE 1997) estimate a dynamic model of schooling and occupational choice
-\vspace{0.05in}
-\item Forward-looking individuals choose how long to go to school and where to work
-\vspace{0.05in}
-\item Schooling and experience have heterogeneous effects on earnings by occupation
-\vspace{0.05in}
-\item Relies on strong parametric assumptions, but useful to understand the approach
-\end{small}
-\end{itemize}
-}
-
-\frame{\frametitle{Keane and Wolpin (1997): Notation}
-\begin{itemize}
-\begin{small}
-\item At each age $a$ between 16 and a terminal age $A$, an individual chooses between five alternatives:
-\vspace{0.05in}
-\begin{enumerate}
-\begin{small}
-\item Blue collar job
-\vspace{0.05in}
-\item White collar job
-\vspace{0.05in}
-\item Military 
-\vspace{0.05in}
-\item School
-\vspace{0.05in}
-\item Home production
-\end{small}
-\end{enumerate}
-\vspace{0.05in}
-\item These alternatives are indexed by $m$
-\vspace{0.05in}
-\item The indicator $d_{m}(a)$ is one if the individual chooses alternative $m$ at age $a$
-\end{small}
-\end{itemize}
-}
-
-\frame{\frametitle{Keane and Wolpin (1997): Notation}
-\begin{itemize}
-\begin{small}
-\item $e_{m}(a)$: skill units (human capital) in alternative $m$ at age $a$
-\vspace{0.05in}
-\item $x_{m}(a)$: experience in alternative $m$ up to age $a$, $x_{m}(a)=\sum_{\ell=16}^{a}d_{m}(\ell)$
-\vspace{0.05in}
-\item $w_{m}(a)$: wage in alternative $m$ at age $a$, $w_{m}(a)=r_{m}e_{m}(a)$
-\vspace{0.05in}
-\item $r_{m}$: return to human capital in alternative $m$
-\vspace{0.05in}
-\item $g(a)$: schooling by age $a$, $g(a)=\sum_{\ell=16}^{a}d_{4}(\ell)$
-\end{small}
-\end{itemize}
-}
-
-\frame{\frametitle{Keane and Wolpin (1997): Notation}
-\begin{itemize}
-\begin{small}
-\item Specification for human capital:
-\begin{displaymath}
-e_{m}(a)=\exp\left(e_{m}(16)+e_{m1}g(a)+e_{m2}x_{m}(a) - e_{m3}x_{m}(a)^{2}+\epsilon_{m}(a)\right)
-\end{displaymath}
-\item $e_{m}(16)$ is the initial endowment
-\vspace{0.05in}
-\item $\epsilon_{m}(a)$ is unobserved time-varying heterogeneity
-\vspace{0.05in}
-\item KW assume $\epsilon_{m}(a)\sim \mbox{iid }N(0,\Omega)$
-\end{small}
-\end{itemize}
-}
-
-\frame{\frametitle{Keane and Wolpin (1997): Notation}
-\begin{itemize}
-\begin{small}
-\item Flow utility (``reward") from working in occupation $m$ at age $a$:
-\begin{displaymath}
-R_{m}(a)=r_{m}\cdot \exp\left(e_{m}(16)+e_{m1}g(a)+e_{m2}x_{m}(a) - e_{m3}x_{m}(a)^{2}+\epsilon_{m}(a)\right)
-\end{displaymath}
-\item Utilities for schooling and home production:
-\begin{displaymath}
-R_{4}(a) = e_{4}(16) - tc_{1}\cdot 1\{g(a)\geq 12\} - tc_{2}\cdot 1\{g(a)\geq 16\}+\epsilon_{4}(a)
-\end{displaymath}
-\begin{displaymath}
-R_{5}(a) = e_{5}(16)+\epsilon_{5}(a)
-\end{displaymath}
-\end{small}
-\end{itemize}
-}
-
-\frame{\frametitle{Value Function}
-\begin{itemize}
-\begin{footnotesize}
-\item The vector of state variables is
-\begin{displaymath}
-S(a)=(e(16),x(a),g(a),\epsilon(a))
-\end{displaymath}
-\item $S(a)$ only includes the current-period shock; no history of $\epsilon(a)$
-\item Value function at age $a$:
-\begin{displaymath}
-V(S(a),a)=\displaystyle{\max_{m}V_{m}(S(a),a)}
-\end{displaymath}
-\begin{displaymath}
-V_{m}(S(a),a)=R_{m}(S(a),a)+\delta E\left[V(S(a+1),a+1)|S(a),d_{m}(a)=1\right]\mbox{ for }a<A
-\end{displaymath}
-\begin{displaymath}
-V_{m}(S(A),A)=R_{m}(S(A),A)
-\end{displaymath}
-\item Evolution of state variables:
-\begin{displaymath}
-x_{m}(a+1)=x_{m}(a)+d_{m}(a)
-\end{displaymath}
-\begin{displaymath}
-g(a+1)=g(a)+d_{4}(a)
-\end{displaymath}
-\end{footnotesize}
-\end{itemize}
-}
-
-\frame{\frametitle{Solution}
-\begin{itemize}
-\begin{footnotesize}
-\item In principle the optimization problem can be solved by backward recursion:
-\begin{enumerate}
-\begin{scriptsize}
-\vspace{0.1in}
-\item Begin in period $A$. For all possible $S(A)$, calculate the best choice $d^{*}(S(A),A)$ and corresponding $V(S(A),A)$
-\vspace{0.1in}
-\item Move to period $A-1$. For every $m$ and every $S(A-1)$, use the results from (1) to compute $E[V(S(A),A)|S(A-1),d_{m}(A-1)=1]$. From these values, construct $V_{m}(S(A-1),A-1)$.
-\vspace{0.1in}
-\item Using the results from (2), maximize over $m$ to calculate $d^{*}(S(A-1),A-1)$ and $V(S(A-1),A)$ for every value of $S(A-1)$.
-\vspace{0.1in}
-\item Continue to move backwards, repeating steps (2) and (3) to compute the value function in every period
-\vspace{0.1in}
-\end{scriptsize}
-\end{enumerate}
-\item In practice the state space is too large -- KW use an interpolation method after computing the value function at a subset of points in the state space
-\end{footnotesize}
-\end{itemize}
-}
-\end{frame}
-\begin{frame}
-\centering
-\includegraphics[pages=1,scale=0.4]{aux/jesse.jpg}
-\end{frame}
-
-
-
-
-\frame{\frametitle{Estimation}
-\begin{itemize}
-\begin{footnotesize}
-\item Parameters to be estimated: Returns to schooling and experience, schooling costs, covariance matrix of $\epsilon(a)$, initial endowment $e(16)$
-\vspace{0.05in}
-\item Observed outcomes at age $a$ are $c(a)=\{d_{m}(a),w_{m}(a)\}$ for alternatives 1-3 and $c(a)=\{d_{m}(a)\}$ for alternatives 4-5
-\vspace{0.05in}
-\item Define $\bar{S}(a) = \{e(16),g(a),x(a)\}$, the state vector excluding unobserved shocks
-\vspace{0.05in}
-\item Probability of an individual's choice sequence is
-\begin{displaymath}
-Pr\left[c(16),...,c(A)|g(16),e(16)\right]=\displaystyle{\prod_{a=16}^{A}{Pr[c(a)|\bar{S}(a)]}}
-\end{displaymath}
-\item Solution to the optimization problem is used to compute the choice probabilities
-\vspace{0.05in}
-\item Estimate by maximum simulated likelihood -- no closed form
-\end{footnotesize}
-\end{itemize}
-}
-
-
-
-\frame{\frametitle{Finite Types}
-\begin{itemize}
-\begin{small}
-\item Initial skill endowment $e(16)$ is likely to be heterogeneous
-\vspace{0.05in}
-\item KW allow for a set of $K$ unobserved types. New likelihood function:
-\begin{displaymath}
-Pr\left[c(16),...,c(A)|g(16),e(16)\right]=\displaystyle{\sum_{k=1}^{K}{\prod_{a=16}^{A}{\pi_{k|g(16)}Pr[c(a)|\bar{S}(a),\mbox{type}=k]}}}
-\end{displaymath}
-\item Type proportions are added to vector of parameters to be estimated
-\vspace{0.05in}
-\item ``Finite types" approach is a common approach to modeling unobserved heterogeneity in a tractable way
-\end{small}
-\end{itemize}
-}
-
-{
-\setbeamercolor{background canvas}{bg=}
-\includepdf{aux/keane_wolpin_1997_f1.pdf}
-}
-
-{
-\setbeamercolor{background canvas}{bg=}
-\includepdf{aux/keane_wolpin_1997_f4.pdf}
-}
-
-\frame{\frametitle{Extended Model}
-\begin{itemize}
-\begin{small}
-\item Basic model fails to fit some important features of the data (e.g. school attendance, persistence in occupational choice, Mincer coefficients) \medskip
-\item KW estimate an ``extended" model adding: \medskip
-\begin{itemize}
-\begin{small}
-\item Extra terms in human capital production function (skill depreciation, age effects, high school/college graduation effects) \medskip
-\item Costs for switching occupations/re-entering school \medskip
-\item Non-pecuniary tastes for occupations
-\end{small}
-\end{itemize}
-\end{small}
-\medskip
-\item Use model to consider counterfactuals (college tuition subsidy).
-\end{itemize}
-}
-
-{
-\setbeamercolor{background canvas}{bg=}
-\includepdf{aux/keane_wolpin_1997_t15.pdf}
-}
 
 \section{Signaling}
 
@@ -1017,5 +795,231 @@ other sources?
 \end{itemize}
 \end{scriptsize}
 \end{frame}
+
+% ===================== APPENDIX =====================
+\appendix
+
+\section{Dynamics}
+\frame{\frametitle{The Careers of Young Men: Keane and Wolpin (JPE 1997)}
+\begin{itemize}
+\begin{small}
+\item Now we'll shift gears and consider a structural model more tightly linked to the theory of human capital investment
+\vspace{0.05in}
+\item Keane and Wolpin (JPE 1997) estimate a dynamic model of schooling and occupational choice
+\vspace{0.05in}
+\item Forward-looking individuals choose how long to go to school and where to work
+\vspace{0.05in}
+\item Schooling and experience have heterogeneous effects on earnings by occupation
+\vspace{0.05in}
+\item Relies on strong parametric assumptions, but useful to understand the approach
+\end{small}
+\end{itemize}
+}
+
+\frame{\frametitle{Keane and Wolpin (1997): Notation}
+\begin{itemize}
+\begin{small}
+\item At each age $a$ between 16 and a terminal age $A$, an individual chooses between five alternatives:
+\vspace{0.05in}
+\begin{enumerate}
+\begin{small}
+\item Blue collar job
+\vspace{0.05in}
+\item White collar job
+\vspace{0.05in}
+\item Military 
+\vspace{0.05in}
+\item School
+\vspace{0.05in}
+\item Home production
+\end{small}
+\end{enumerate}
+\vspace{0.05in}
+\item These alternatives are indexed by $m$
+\vspace{0.05in}
+\item The indicator $d_{m}(a)$ is one if the individual chooses alternative $m$ at age $a$
+\end{small}
+\end{itemize}
+}
+
+\frame{\frametitle{Keane and Wolpin (1997): Notation}
+\begin{itemize}
+\begin{small}
+\item $e_{m}(a)$: skill units (human capital) in alternative $m$ at age $a$
+\vspace{0.05in}
+\item $x_{m}(a)$: experience in alternative $m$ up to age $a$, $x_{m}(a)=\sum_{\ell=16}^{a}d_{m}(\ell)$
+\vspace{0.05in}
+\item $w_{m}(a)$: wage in alternative $m$ at age $a$, $w_{m}(a)=r_{m}e_{m}(a)$
+\vspace{0.05in}
+\item $r_{m}$: return to human capital in alternative $m$
+\vspace{0.05in}
+\item $g(a)$: schooling by age $a$, $g(a)=\sum_{\ell=16}^{a}d_{4}(\ell)$
+\end{small}
+\end{itemize}
+}
+
+\frame{\frametitle{Keane and Wolpin (1997): Notation}
+\begin{itemize}
+\begin{small}
+\item Specification for human capital:
+\begin{displaymath}
+e_{m}(a)=\exp\left(e_{m}(16)+e_{m1}g(a)+e_{m2}x_{m}(a) - e_{m3}x_{m}(a)^{2}+\epsilon_{m}(a)\right)
+\end{displaymath}
+\item $e_{m}(16)$ is the initial endowment
+\vspace{0.05in}
+\item $\epsilon_{m}(a)$ is unobserved time-varying heterogeneity
+\vspace{0.05in}
+\item KW assume $\epsilon_{m}(a)\sim \mbox{iid }N(0,\Omega)$
+\end{small}
+\end{itemize}
+}
+
+\frame{\frametitle{Keane and Wolpin (1997): Notation}
+\begin{itemize}
+\begin{small}
+\item Flow utility (``reward") from working in occupation $m$ at age $a$:
+\begin{displaymath}
+R_{m}(a)=r_{m}\cdot \exp\left(e_{m}(16)+e_{m1}g(a)+e_{m2}x_{m}(a) - e_{m3}x_{m}(a)^{2}+\epsilon_{m}(a)\right)
+\end{displaymath}
+\item Utilities for schooling and home production:
+\begin{displaymath}
+R_{4}(a) = e_{4}(16) - tc_{1}\cdot 1\{g(a)\geq 12\} - tc_{2}\cdot 1\{g(a)\geq 16\}+\epsilon_{4}(a)
+\end{displaymath}
+\begin{displaymath}
+R_{5}(a) = e_{5}(16)+\epsilon_{5}(a)
+\end{displaymath}
+\end{small}
+\end{itemize}
+}
+
+\frame{\frametitle{Value Function}
+\begin{itemize}
+\begin{footnotesize}
+\item The vector of state variables is
+\begin{displaymath}
+S(a)=(e(16),x(a),g(a),\epsilon(a))
+\end{displaymath}
+\item $S(a)$ only includes the current-period shock; no history of $\epsilon(a)$
+\item Value function at age $a$:
+\begin{displaymath}
+V(S(a),a)=\displaystyle{\max_{m}V_{m}(S(a),a)}
+\end{displaymath}
+\begin{displaymath}
+V_{m}(S(a),a)=R_{m}(S(a),a)+\delta E\left[V(S(a+1),a+1)|S(a),d_{m}(a)=1\right]\mbox{ for }a<A
+\end{displaymath}
+\begin{displaymath}
+V_{m}(S(A),A)=R_{m}(S(A),A)
+\end{displaymath}
+\item Evolution of state variables:
+\begin{displaymath}
+x_{m}(a+1)=x_{m}(a)+d_{m}(a)
+\end{displaymath}
+\begin{displaymath}
+g(a+1)=g(a)+d_{4}(a)
+\end{displaymath}
+\end{footnotesize}
+\end{itemize}
+}
+
+\frame{\frametitle{Solution}
+\begin{itemize}
+\begin{footnotesize}
+\item In principle the optimization problem can be solved by backward recursion:
+\begin{enumerate}
+\begin{scriptsize}
+\vspace{0.1in}
+\item Begin in period $A$. For all possible $S(A)$, calculate the best choice $d^{*}(S(A),A)$ and corresponding $V(S(A),A)$
+\vspace{0.1in}
+\item Move to period $A-1$. For every $m$ and every $S(A-1)$, use the results from (1) to compute $E[V(S(A),A)|S(A-1),d_{m}(A-1)=1]$. From these values, construct $V_{m}(S(A-1),A-1)$.
+\vspace{0.1in}
+\item Using the results from (2), maximize over $m$ to calculate $d^{*}(S(A-1),A-1)$ and $V(S(A-1),A)$ for every value of $S(A-1)$.
+\vspace{0.1in}
+\item Continue to move backwards, repeating steps (2) and (3) to compute the value function in every period
+\vspace{0.1in}
+\end{scriptsize}
+\end{enumerate}
+\item In practice the state space is too large -- KW use an interpolation method after computing the value function at a subset of points in the state space
+\end{footnotesize}
+\end{itemize}
+}
+\end{frame}
+\begin{frame}
+\centering
+\includegraphics[page=1,scale=0.4]{aux/jesse.jpg}
+\end{frame}
+
+
+
+
+\frame{\frametitle{Estimation}
+\begin{itemize}
+\begin{footnotesize}
+\item Parameters to be estimated: Returns to schooling and experience, schooling costs, covariance matrix of $\epsilon(a)$, initial endowment $e(16)$
+\vspace{0.05in}
+\item Observed outcomes at age $a$ are $c(a)=\{d_{m}(a),w_{m}(a)\}$ for alternatives 1-3 and $c(a)=\{d_{m}(a)\}$ for alternatives 4-5
+\vspace{0.05in}
+\item Define $\bar{S}(a) = \{e(16),g(a),x(a)\}$, the state vector excluding unobserved shocks
+\vspace{0.05in}
+\item Probability of an individual's choice sequence is
+\begin{displaymath}
+Pr\left[c(16),...,c(A)|g(16),e(16)\right]=\displaystyle{\prod_{a=16}^{A}{Pr[c(a)|\bar{S}(a)]}}
+\end{displaymath}
+\item Solution to the optimization problem is used to compute the choice probabilities
+\vspace{0.05in}
+\item Estimate by maximum simulated likelihood -- no closed form
+\end{footnotesize}
+\end{itemize}
+}
+
+
+
+\frame{\frametitle{Finite Types}
+\begin{itemize}
+\begin{small}
+\item Initial skill endowment $e(16)$ is likely to be heterogeneous
+\vspace{0.05in}
+\item KW allow for a set of $K$ unobserved types. New likelihood function:
+\begin{displaymath}
+Pr\left[c(16),...,c(A)|g(16),e(16)\right]=\displaystyle{\sum_{k=1}^{K}{\prod_{a=16}^{A}{\pi_{k|g(16)}Pr[c(a)|\bar{S}(a),\mbox{type}=k]}}}
+\end{displaymath}
+\item Type proportions are added to vector of parameters to be estimated
+\vspace{0.05in}
+\item ``Finite types" approach is a common approach to modeling unobserved heterogeneity in a tractable way
+\end{small}
+\end{itemize}
+}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf{aux/keane_wolpin_1997_f1.pdf}
+}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf{aux/keane_wolpin_1997_f4.pdf}
+}
+
+\frame{\frametitle{Extended Model}
+\begin{itemize}
+\begin{small}
+\item Basic model fails to fit some important features of the data (e.g. school attendance, persistence in occupational choice, Mincer coefficients) \medskip
+\item KW estimate an ``extended" model adding: \medskip
+\begin{itemize}
+\begin{small}
+\item Extra terms in human capital production function (skill depreciation, age effects, high school/college graduation effects) \medskip
+\item Costs for switching occupations/re-entering school \medskip
+\item Non-pecuniary tastes for occupations
+\end{small}
+\end{itemize}
+\end{small}
+\medskip
+\item Use model to consider counterfactuals (college tuition subsidy).
+\end{itemize}
+}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf{aux/keane_wolpin_1997_t15.pdf}
+}
 
 \end{document}

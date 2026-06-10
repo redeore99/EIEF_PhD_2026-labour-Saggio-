@@ -11,7 +11,7 @@ This course introduces students to core theoretical concepts in labor economics 
 ## Schedule
 The course runs over five consecutive days. Each day is divided into 2-hour blocks.
 
-| Day | Date | Time (Rome) | Topic |
+| Day | Date | Time | Topic |
 |-----|------|-------------|-------|
 | Mon | 22 Jun | 09:00–11:00 | Human Capital  |
 | Mon | 22 Jun | 11:00–13:00 | Human Capital / Self-Selection |
@@ -45,6 +45,7 @@ Grading is assigned as follows:
 		- Cameron, Stephen, and Christopher Taber (2004). "Estimation of Educational Borrowing Constraints Using Returns to Schooling." *Journal of Political Economy* 112 (1).
 		- Card, David (2001). "Estimating the Return to Schooling: Progress on Some Persistent Econometric Problems." *Econometrica* 69 (5).
 		- Carneiro, Pedro, and James Heckman (2002). "The Evidence on Credit Constraints in Post-Secondary Schooling." *The Economic Journal* 112.
+		- Chetty, Raj, John N. Friedman, Emmanuel Saez, Nicholas Turner, and Danny Yagan (2020). "Income Segregation and Intergenerational Mobility Across Colleges in the United States." *Quarterly Journal of Economics* 135 (3).
 		- Dale, Stacy, and Alan Krueger (2002). "Estimating the Payoff to Attending a More Selective College: An Application of Selection on Observables and Unobservables." *Quarterly Journal of Economics* 117 (4).
 		- Dale, Stacy, and Alan Krueger (2014). "Estimating the Effects of College Characteristics Over the Career Using Administrative Earnings Data." *Journal of Human Resources* 49 (2).
 		- Devereux, Paul, and Robert Hart (2010). "Forced to be Rich? Returns to Compulsory Schooling in Britain." *The Economic Journal* 120 (54).
@@ -53,6 +54,7 @@ Grading is assigned as follows:
 		- Griliches, Zvi (1977). "Estimating the Returns to Schooling: Some Econometric Problems." *Econometrica* 45 (1).
 		- Heckman, James, and Edward Vytlacil (1998). "Instrumental Variables Methods for the Correlated Random Coefficient Model: Estimating the Rate of Return to Schooling When the Return is Correlated with Schooling." *Journal of Human Resources* 33 (4).
 		- Keane, Michael, and Kenneth Wolpin (1997). "The Career Decisions of Young Men." *Journal of Political Economy* 105 (3).
+		- Mountjoy, Jack, and Brent Hickman (2021). "The Returns to College(s): Relative Value-Added and Match Effects in Higher Education." NBER Working Paper No. 29276.
 		- Oreopolous, Philip (2006). "Estimating Average and Local Average Treatment Effects of Education when Compulsory Schooling Laws Really Matter." *American Economic Review* 96 (1).
 		- Tyler, John, Richard Murnane, and John Willett (2000). "Estimating the Labor Market Signaling Value of the GED." *Quarterly Journal of Economics* 115 (2).
 		- Zimmerman, Seth (2014). "The Returns to College Admission for Academically Marginal Students." *Journal of Labor Economics* 32 (4).
@@ -60,6 +62,7 @@ Grading is assigned as follows:
 		- Arcidiacono, Peter, Patrick Bayer, and Aurel Hizmo (2010). "Beyond Signaling and Human Capital: Education and the Revelation of Ability." *American Economic Journal: Applied Economics* 2 (4).
 		- Bedard, Kelly (2001). "Human Capital Versus Signaling Models: University Access and High School Dropouts." *Journal of Political Economy* 109 (4).
 		- Clark, Damon, and Paco Martorell (2014). "The Signaling Value of a High School Diploma." *Journal of Political Economy* 122 (2).
+		- Deming, David J. (2022). "Four Facts about Human Capital." *Journal of Economic Perspectives* 36 (3).
 		- Lang, Kevin, and David Kropp (1986). "Human Capital Versus Sorting: The Effects of Compulsory Attendance Laws." *Quarterly Journal of Economics* 101 (3).
 		- MaCleod, W. Bentley, Evan Riehl, Juan E. Saavedra, and Miguel Urquiola (forthcoming). "The Big Sort: College Reputation and Labor Market Outcomes." *American Economic Journal: Applied Economics*.
 		- Spence, Michael (1973). "Job Market Signaling." *Quarterly Journal of Economics* 87 (3).
