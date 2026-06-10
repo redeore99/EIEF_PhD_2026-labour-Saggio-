@@ -14,7 +14,7 @@ The course runs over five consecutive days. Each day is divided into 2-hour bloc
 | Day | Date | Time | Topic |
 |-----|------|-------------|-------|
 | Mon | 22 Jun | 09:00–11:00 | Human Capital  |
-| Mon | 22 Jun | 11:00–13:00 | Human Capital / Self-Selection |
+| Mon | 22 Jun | 11:00–13:00 | Human Capital  |
 | Tue | 23 Jun | 09:00–11:00 | Self-Selection  |
 | Tue | 23 Jun | 11:00–13:00 | Wage Inequality |
 | Wed | 24 Jun | 09:00–11:00 | Wage Inequality|
