@@ -30,7 +30,7 @@ Grading is assigned as follows:
 * **25%** — **in-class participation**: asking questions, answering questions, interacting with class material and helping me make this class as interactive as possible.
 * **25%** — **problem sets**: ps1 is already posted.
 
-## Referee Report — Papers to Referee
+## Papers to Referee
 
 Each student will be randomly assigned **one** of the following papers to referee. Papers are grouped by macro area.
 
