@@ -1,4 +1,4 @@
-# Labor Economics @EIEF, Summer 2026
+# Labor Economics @RED, Summer 2026
 
 ## Course Description
 This course introduces students to core theoretical concepts in labor economics and surveys recent empirical work in the field. 
@@ -26,11 +26,32 @@ The course runs over 4 consecutive days. Each day is divided into 2-hour blocks.
 ## Assessment
 Grading is assigned as follows:
 
-* **50%** — **referee report**: each student will be assigned a paper to referee (randomly); assignments will be available during this week and the report will be due at the beginning of July.
+* **50%** — **referee report**: each student will be assigned a paper to referee (randomly); assignments will be decided this week and the report will be due July 7th.
 * **25%** — **in-class participation**: asking questions, answering questions, interacting with class material and helping me make this class as interactive as possible.
 * **25%** — **problem sets**: ps1 is already posted.
 
-## Course Outline & Readings
+## Referee Report — Papers to Referee
+
+Each student will be randomly assigned **one** of the following papers to referee. Papers are grouped by macro area.
+
+| Macro Area | Paper | Author(s) | Link |
+|------------|-------|-----------|------|
+| **Human Capital / Selection** | Community Colleges and Upward Mobility | Jack Mountjoy | [link](https://www.aeaweb.org/articles?id=10.1257/aer.20181756) |
+| | The Demand for Effective Charter Schools | Chris Walters | [link](https://drive.google.com/file/d/18xkGaVda_6PeY21InxXEW2iW6Xjwock4/view) |
+| **Labor Demand / Wage Inequality** | Trade Adjustment: Worker-Level Evidence | David Autor et al. | [link](https://economics.mit.edu/sites/default/files/publications/trade%20adjustment%202014.pdf) |
+| | The Skill Complementarity of Broadband Internet | Mogstad et al. | [link](https://www.dropbox.com/scl/fi/fqtav3fk3nxloup0hag4e/internet_and_productivity_final_QJE_aa.pdf?rlkey=z29s4g3cb15rsefrjczhckr2m&e=1&dl=0) |
+| | Skill-Replacing Technology and Bottom-Half Inequality | Oren Danieli | [link](https://www.dropbox.com/scl/fi/i6lpe74nc4zyuq49g2mkw/full-paper.pdf?rlkey=ug2csecbh60jgk0qbvbu5f7vw&e=1&dl=0) |
+| **Unemployment** | Wage Insurance for Displaced Workers | Kovak et al. | [link](https://static1.squarespace.com/static/5acbd8e736099b27ba4cfb36/t/667b0dfc65b4380fd98a61e6/1719340554742/HKL_Wage_Insurance.pdf) |
+| | Evidence on Job Search Models from a Survey of Unemployed Workers in Germany | DellaVigna et al.† | [link](https://drive.google.com/file/d/1rBsIkolZJWHvwexHNudyLvSuDYwSlx0u/view) |
+| **Minimum Wages** | The Effect of Minimum Wages on Low-Wage Jobs | Cengiz et al. | [link](https://academic.oup.com/qje/article-abstract/134/3/1405/5484905?redirectedFrom=fulltext) |
+| | Who's Afraid of the Minimum Wage? Measuring the Impacts on Independent Businesses Using Matched U.S. Tax Returns | Rao & Rinsch | [link](https://drive.google.com/file/d/1_0qhHs0v1rLUvQxKFL1iJTJuIPrlfq9-/view) |
+| **Firms / Monopsony** | Voluntary Minimum Wages: The Local Labor Market Effects of National Retailer Policies | Derenoncourt & Weil | [link](https://www.dropbox.com/scl/fi/k577wgjdzqcs01gi7aulo/Voluntary_Minimum_Wages_Submission_Version.pdf?rlkey=fdjnb0tk2ppoe1tzyilso9fd1&e=1&dl=0) |
+| | Collusion Among Employers in India | Garima Sharma | [link](https://garimasharma.com/files/collusion_gs.pdf) |
+| | The Gender Pay Gap: Micro Sources and Macro Consequences | Morchio & Moser† | [link](https://static1.squarespace.com/static/560a9916e4b0e4c1ab5747fa/t/69f395b6bba0eb2e766b0681/1777571254811/MM2026.pdf) |
+
+*† Author(s) not listed in the source spreadsheet; inferred from the paper title — please verify.*
+
+## Readings
 
 1. **Human Capital**
 	1. *Models of human capital investment*
