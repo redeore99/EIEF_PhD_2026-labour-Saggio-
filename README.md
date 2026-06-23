@@ -6,7 +6,7 @@ This course introduces students to core theoretical concepts in labor economics 
 ## Logistics
 * **Instructor:** Raffaele Saggio (rsaggio@mail.ubc.ca)
 * **When:** 23–26 June 2026
-* **Where:** Via Abruzzi, Rome.
+* **Where:** Via Abruzzi 10, Rome.
 
 ## Schedule
 The course runs over 4 consecutive days. Each day is divided into 2-hour blocks.
