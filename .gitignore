@@ -5,6 +5,7 @@ students_roster.md
 
 # Build artifacts / auxiliary files
 aux/
+__pycache__/
 .DS_Store
 *.aux
 *.log
