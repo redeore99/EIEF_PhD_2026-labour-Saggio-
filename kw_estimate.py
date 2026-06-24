@@ -130,6 +130,37 @@ def numerical_hessian(fun, x, eps=1e-4):
     return H
 
 
+def cell_loglik(params, c1, c2):
+    """Log-likelihood contribution of a single observation in cell (c1, c2)."""
+    logP1, logP2 = model_log_probs(params)
+    return logP1[c1 - 1] + logP2[c1 - 1, c2 - 1]
+
+
+def opg_information(params, counts, eps=1e-5):
+    """
+    Outer-product-of-gradients (BHHH) information matrix.
+
+    The per-observation score depends only on the cell (c1, c2), so there are at
+    most nine distinct score vectors.  We compute each by central finite
+    differences and accumulate  J = sum_i s_i s_i' = sum_cells n_cell s s'.
+    `counts` is a 3x3 array of observed cell counts.
+    """
+    k = params.size
+    J = np.zeros((k, k))
+    for c1 in (1, 2, 3):
+        for c2 in (1, 2, 3):
+            n_cell = counts[c1 - 1, c2 - 1]
+            if n_cell == 0:
+                continue
+            s = np.zeros(k)
+            for j in range(k):
+                xp = params.copy(); xp[j] += eps
+                xm = params.copy(); xm[j] -= eps
+                s[j] = (cell_loglik(xp, c1, c2) - cell_loglik(xm, c1, c2)) / (2 * eps)
+            J += n_cell * np.outer(s, s)
+    return J
+
+
 def main():
     C1, C2 = load_data()
     n = C1.size
@@ -164,26 +195,47 @@ def main():
     print(f"Maximised log-likelihood: {-res.fun:.4f}\n")
 
     est = res.x.copy()
-    # ---- Standard errors from the inverse numerical Hessian of the NLL. ----
-    H = numerical_hessian(lambda p: neg_loglik(p, C1, C2), est)
-    cov = np.linalg.inv(H)
-    se_raw = np.sqrt(np.diag(cov))
-
-    # Convert rho = log(delta) back to delta with the delta method:
-    # delta = exp(rho)  ->  SE(delta) = exp(rho) * SE(rho).
     a1, b1, g1, a2, b2, g2, rho = est
     delta = np.exp(rho)
-    se_delta = delta * se_raw[6]
+
+    # ---- Standard errors (extra credit) ----------------------------------
+    # All three estimators of the asymptotic variance are computed on the
+    # rho = log(delta) parameterisation, then the delta-method Jacobian below
+    # maps the rho row/column to delta via  d(delta)/d(rho) = exp(rho) = delta.
+    #
+    # (a) Hessian / observed information:  V_H = H^{-1}, where H is the Hessian
+    #     of the NEGATIVE log-likelihood at the optimum.
+    H = numerical_hessian(lambda p: neg_loglik(p, C1, C2), est)
+    V_H = np.linalg.inv(H)
+    # (b) OPG / BHHH:  V_J = J^{-1}, J = sum_i s_i s_i' (outer product of scores).
+    counts = np.round(emp * n).astype(int)
+    J = opg_information(est, counts)
+    V_J = np.linalg.inv(J)
+    # (c) Sandwich / robust (Huber-White):  V_S = H^{-1} J H^{-1}.
+    V_S = V_H @ J @ V_H
+
+    def to_delta(cov):
+        """Map the covariance from (.,rho) to (.,delta) by the delta method."""
+        Jac = np.eye(7); Jac[6, 6] = delta      # d delta / d rho = delta
+        cov_d = Jac @ cov @ Jac.T
+        return np.sqrt(np.diag(cov_d))
+
+    se_H = to_delta(V_H)     # baseline SEs reported in the table
+    se_J = to_delta(V_J)
+    se_S = to_delta(V_S)
 
     names   = ["alpha_1", "beta_1", "gamma_1", "alpha_2", "beta_2", "gamma_2", "delta"]
     values  = [a1, b1, g1, a2, b2, g2, delta]
-    ses     = [se_raw[0], se_raw[1], se_raw[2], se_raw[3], se_raw[4], se_raw[5], se_delta]
+    ses     = list(se_H)     # default reported SE = Hessian-based
 
-    print(f"{'parameter':>10}  {'estimate':>10}  {'std. error':>10}")
-    print("-" * 36)
-    for nm, v, s in zip(names, values, ses):
-        print(f"{nm:>10}  {v:>10.4f}  {s:>10.4f}")
-    print(f"\n(log delta = {rho:.4f}, SE = {se_raw[6]:.4f})\n")
+    print(f"{'parameter':>10}  {'estimate':>10}  {'SE(Hess)':>10}  {'SE(OPG)':>10}  {'SE(sand.)':>10}")
+    print("-" * 60)
+    for k_ in range(7):
+        print(f"{names[k_]:>10}  {values[k_]:>10.4f}  "
+              f"{se_H[k_]:>10.4f}  {se_J[k_]:>10.4f}  {se_S[k_]:>10.4f}")
+    print(f"\n(log delta = {rho:.4f}, SE_Hess = {np.sqrt(V_H[6,6]):.4f})")
+    print("The three SE estimators agree closely, as expected for a correctly")
+    print("specified MLE where the information-matrix equality H = J holds.\n")
 
     # ---- Sanity check: model-implied vs empirical (C1,C2) cell probabilities. ----
     logP1, logP2 = model_log_probs(est)

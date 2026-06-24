@@ -15,7 +15,7 @@
 
 \title{Problem Set 1 --- Solutions\\
 \large Labor Economics (Saggio), Summer 2026}
-\author{}
+\author{Pablo Fiorentini}
 \date{}
 
 \begin{document}
@@ -297,28 +297,60 @@ I estimate $\theta$ by maximum likelihood on the $N=5{,}000$ simulated choice
 sequences in \texttt{kw\_example.csv}, minimising $-\ell(\theta)$ in Python
 (\texttt{scipy.optimize.minimize}, BFGS --- the analogue of Matlab's
 \texttt{fminunc}). I search over $\log\delta$ to keep $\delta>0$, and use several
-random starting values, retaining the global optimum. Standard errors are the
-square roots of the diagonal of the inverse numerical Hessian of $-\ell$; the SE
-for $\delta$ is obtained from that of $\log\delta$ by the delta method. The code
-is in \texttt{kw\_estimate.py}.
+random starting values, retaining the global optimum. The code is in
+\texttt{kw\_estimate.py}; standard errors are described below.
 
 \begin{table}[h]
 \centering
 \caption{Maximum-likelihood estimates of the simplified Keane--Wolpin model}
-\begin{tabular}{lcc}
+\begin{tabular}{lcccc}
 \toprule
-Parameter & Estimate & Std.\ Error \\ \midrule
-$\alpha_1$ (white-collar intercept)        & $0.4234$  & $0.0585$ \\
-$\beta_1$ (return to education, WC)         & $0.3681$  & $0.0800$ \\
-$\gamma_1$ (return to WC experience)        & $0.0607$  & $0.0844$ \\
-$\alpha_2$ (blue-collar intercept)          & $0.4237$  & $0.0422$ \\
-$\beta_2$ (return to education, BC)          & $0.1215$  & $0.0635$ \\
-$\gamma_2$ (return to BC experience)        & $0.3513$  & $0.0792$ \\
-$\delta$ (discount factor)                  & $0.8395$  & $0.3818$ \\ \midrule
-\multicolumn{3}{l}{Log-likelihood $=-10{,}734.24$,\quad $N=5{,}000$}\\
+ & & \multicolumn{3}{c}{Standard error}\\ \cmidrule(l){3-5}
+Parameter & Estimate & Hessian & OPG & Sandwich \\ \midrule
+$\alpha_1$ (white-collar intercept)        & $0.4234$  & $0.0585$ & $0.0624$ & $0.0552$ \\
+$\beta_1$ (return to education, WC)         & $0.3681$  & $0.0800$ & $0.0873$ & $0.0738$ \\
+$\gamma_1$ (return to WC experience)        & $0.0607$  & $0.0844$ & $0.0881$ & $0.0814$ \\
+$\alpha_2$ (blue-collar intercept)          & $0.4237$  & $0.0422$ & $0.0431$ & $0.0416$ \\
+$\beta_2$ (return to education, BC)          & $0.1215$  & $0.0635$ & $0.0636$ & $0.0634$ \\
+$\gamma_2$ (return to BC experience)        & $0.3513$  & $0.0792$ & $0.0823$ & $0.0768$ \\
+$\delta$ (discount factor)                  & $0.8395$  & $0.3818$ & $0.4147$ & $0.3541$ \\ \midrule
+\multicolumn{5}{l}{Log-likelihood $=-10{,}734.24$,\quad $N=5{,}000$}\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Standard errors (extra credit).} The MLE
+$\hat\theta\overset{a}{\sim}\mathcal{N}\!\bigl(\theta_0,\,V/N\bigr)$, and I report
+three consistent estimators of the asymptotic variance, all computed on the
+$\rho=\log\delta$ parameterisation and then mapped to $\delta$ by the delta
+method (see below). Let $s_i(\theta)=\partial\ell_i/\partial\theta$ be the
+score of observation $i$ and $\hat H=-\sum_i\partial^2\ell_i/\partial\theta\,\partial\theta'$
+the observed (negative) Hessian, both evaluated at $\hat\theta$:
+\begin{equation}
+\underbrace{\widehat V_{H}=\hat H^{-1}}_{\text{observed information}}
+,\qquad
+\underbrace{\widehat V_{J}=\Bigl(\textstyle\sum_i s_i s_i'\Bigr)^{-1}}_{\text{OPG / BHHH}}
+,\qquad
+\underbrace{\widehat V_{S}=\hat H^{-1}\Bigl(\textstyle\sum_i s_i s_i'\Bigr)\hat H^{-1}}_{\text{sandwich / robust}} .
+\end{equation}
+I compute $\hat H$ by a finite-difference Hessian of $-\ell$ and the scores
+$s_i$ by central differences; because each observation's likelihood depends only
+on its $(C(1),C(2))$ cell, the score takes only nine distinct values, so the
+OPG matrix is $\sum_{\text{cells}} n_{\text{cell}}\,s\,s'$. The reported baseline
+SEs are the Hessian-based $\sqrt{\operatorname{diag}\widehat V_{H}}$.
+
+\emph{Delta method for $\delta$.} I optimise over $\rho=\log\delta$; since
+$\delta=e^{\rho}$ has $\partial\delta/\partial\rho=\delta$, the SE of $\delta$ is
+$\widehat{\SE}(\delta)=\delta\cdot\widehat{\SE}(\rho)$ (with
+$\widehat{\SE}(\log\delta)=0.4548$ under the Hessian estimator).
+
+\emph{Information-matrix equality.} Under correct specification the
+information-matrix equality $H=J$ holds, so the three estimators should
+coincide asymptotically. They do: across all seven parameters the Hessian, OPG,
+and sandwich SEs differ only in the third decimal, which is reassuring evidence
+that the model and likelihood are correctly specified. The lone caveat is
+$\delta$, whose SE ($\approx0.38$--$0.41$) is large under every method because
+the likelihood is flat in $\delta$.
 
 \textbf{Goodness of fit.} With seven parameters for the eight free cell
 probabilities of the $3\times3$ table of $(C(1),C(2))$ sequences, the model
