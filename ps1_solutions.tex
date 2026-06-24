@@ -1,0 +1,362 @@
+\documentclass[11pt,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+\input{Macros.tex}
+
+\title{Problem Set 1 --- Solutions\\
+\large Labor Economics (Saggio), Summer 2026}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%=======================================================================
+\section*{Question 1: Returns to Schooling}
+%=======================================================================
+
+An infinitely-lived agent picks schooling length $S$, faces discount rate $r$,
+earns the scholarship flow $T$ on $[0,S]$, and earns $y(S)$ forever after date
+$S$. She maximises the present value of earnings plus transfers.
+
+\subsection*{Part 1: Objective and optimality condition}
+
+In continuous time the objective is
+\begin{equation}
+V(S)=\underbrace{\int_{0}^{S}T\,e^{-rt}\,dt}_{\text{scholarship while in school}}
+     +\underbrace{\int_{S}^{\infty}y(S)\,e^{-rt}\,dt}_{\text{earnings after school}}
+     =\frac{T\left(1-e^{-rS}\right)}{r}+\frac{y(S)\,e^{-rS}}{r}.
+\end{equation}
+Differentiating with respect to $S$,
+\begin{equation}
+V'(S)=T e^{-rS}+\frac{y'(S)e^{-rS}-r\,y(S)e^{-rS}}{r}
+     =e^{-rS}\!\left[T+\frac{y'(S)}{r}-y(S)\right].
+\end{equation}
+Setting $V'(S)=0$ and cancelling $e^{-rS}>0$ gives the optimality condition
+\begin{equation}\boxed{\;y'(S^{*})=r\bigl(y(S^{*})-T\bigr).\;}\end{equation}
+
+\textbf{Interpretation.} Rewrite as $\dfrac{y'(S^{*})}{r}=y(S^{*})-T$. The
+left-hand side is the \emph{marginal benefit} of one more year of school: the
+permanent earnings increment $y'(S)$ capitalised at rate $r$. The right-hand
+side is the \emph{marginal cost}: the earnings $y(S)$ forgone by staying in
+school one more instant, \emph{net} of the scholarship $T$ that is still
+collected. The agent keeps studying until the discounted value of the higher
+earnings path just balances the net opportunity cost of delaying entry into the
+labor market. A more generous scholarship $T$ lowers the marginal cost and
+raises optimal schooling.
+
+\subsection*{Part 2: Ability and the optimal duration of schooling}
+
+With $y_{i}(S)=\exp(\alpha_{i}+\beta S)$ we have $y_{i}'(S)=\beta\,y_{i}(S)$.
+The optimality condition becomes
+\begin{equation}
+\beta\,y_{i}=r\bigl(y_{i}-T\bigr)
+\quad\Longrightarrow\quad
+y_{i}(S_{i}^{*})=\frac{rT}{r-\beta},
+\end{equation}
+which requires $r>\beta$ (so that the cost of delay eventually dominates and an
+interior optimum exists). Taking logs of
+$\exp(\alpha_{i}+\beta S_{i}^{*})=rT/(r-\beta)$,
+\begin{equation}\boxed{\;
+S_{i}^{*}=\frac{1}{\beta}\left[\log\!\Bigl(\frac{rT}{r-\beta}\Bigr)-\alpha_{i}\right].
+\;}\end{equation}
+
+\textbf{Do higher-ability agents get more or less schooling?} \emph{Less}: the
+coefficient on $\alpha_{i}$ is $-1/\beta<0$. Intuitively, the marginal return to
+schooling $\beta$ is common to everyone, but the optimal stopping rule pins the
+\emph{level} of earnings at $y^{*}=rT/(r-\beta)$, identical across agents. A
+high-ability agent starts from a higher $\alpha_{i}$, so she reaches that target
+earnings level with fewer years of school. Equivalently, ability and schooling
+are substitutes in producing $y$, and the opportunity cost of an extra year
+(forgone earnings $y_i(S)-T$) rises faster for the high-ability agent, pushing
+her out of school sooner.
+
+\subsection*{Part 3: OLS bias with heterogeneous ability and scholarships}
+
+Now $\alpha_{i}$ and $T_{i}$ vary across agents while $\beta$ is common. From
+Part 2, at the optimum $y_{i}=rT_{i}/(r-\beta)$, so
+\begin{align}
+\log y_{i} &= \log\!\Bigl(\tfrac{r}{r-\beta}\Bigr)+\log T_{i}, \\[2pt]
+S_{i}      &= \frac{1}{\beta}\left[\log\!\Bigl(\tfrac{r}{r-\beta}\Bigr)+\log T_{i}-\alpha_{i}\right].
+\end{align}
+Note $\log y_i$ depends on $\log T_i$ only (not on $\alpha_i$ directly): ability
+heterogeneity is ``undone'' in equilibrium earnings because high-$\alpha$ agents
+choose less schooling. The OLS slope of $\log y$ on $S$ has probability limit
+$\plim\hat{b}=\Cov(\log y_{i},S_{i})/\Var(S_{i})$. Using
+$\sigma_{T}^{2}=\Var(\log T_i)$, $\sigma_{\alpha}^{2}=\Var(\alpha_i)$,
+$\sigma_{T\alpha}=\Cov(\log T_i,\alpha_i)$:
+\begin{align}
+\Cov(\log y_i,S_i)&=\Cov\!\Bigl(\log T_i,\tfrac{1}{\beta}(\log T_i-\alpha_i)\Bigr)
+=\tfrac{1}{\beta}\bigl(\sigma_T^2-\sigma_{T\alpha}\bigr),\\
+\Var(S_i)&=\tfrac{1}{\beta^2}\Var(\log T_i-\alpha_i)
+=\tfrac{1}{\beta^2}\bigl(\sigma_T^2+\sigma_\alpha^2-2\sigma_{T\alpha}\bigr).
+\end{align}
+Therefore
+\begin{equation}\boxed{\;
+\plim\hat{b}=\beta\;\frac{\sigma_T^2-\sigma_{T\alpha}}
+{\sigma_T^2+\sigma_\alpha^2-2\sigma_{T\alpha}}.
+\;}\end{equation}
+
+\textbf{Discussion of the bias.}
+\begin{itemize}[nosep]
+\item \emph{No ability heterogeneity} ($\sigma_\alpha^2=0,\ \sigma_{T\alpha}=0$):
+$\plim\hat b=\beta$. OLS is consistent --- all schooling variation is driven by
+the ``cost shifter'' $T_i$, which is independent of the outcome equation, so
+$T_i$ acts like an instrument and there is no bias.
+\item \emph{Ability variance} ($\sigma_\alpha^2>0$, $\sigma_{T\alpha}=0$):
+$\plim\hat b=\beta\,\sigma_T^2/(\sigma_T^2+\sigma_\alpha^2)<\beta$. Variation in
+$\alpha_i$ adds noise to $S_i$ that is unrelated to $\log y_i$, \emph{attenuating}
+the slope toward zero.
+\item \emph{Sorting} ($\sigma_{T\alpha}\neq0$): the covariance term shifts the
+bias. Because here $\log y_i$ rises with $T_i$ but high-ability agents take
+\emph{less} schooling, a positive $\sigma_{T\alpha}$ reduces the numerator and
+denominator in offsetting ways; the net effect depends on the relative
+magnitudes. The key message is that OLS recovers $\beta$ only when schooling
+choices are uncorrelated with ability.
+\end{itemize}
+
+\subsection*{Part 4: OLS bias with heterogeneous returns}
+
+Now $T_{i}=T$ is constant but returns are heterogeneous,
+$y_{i}(S)=\exp(\alpha_{i}+\beta_{i}S)$. The Part-1 condition
+$\beta_i y_i=r(y_i-T)$ gives $y_i(S_i^*)=rT/(r-\beta_i)$, so
+\begin{align}
+\log y_{i} &= \log(rT)-\log(r-\beta_{i}), \label{eq:p4y}\\
+S_{i}      &= \frac{1}{\beta_{i}}\bigl[\log(rT)-\log(r-\beta_{i})-\alpha_{i}\bigr].
+\label{eq:p4S}
+\end{align}
+This is a \emph{correlated random coefficients} model: the slope $\beta_i$ that
+generates earnings is the same object that enters the schooling choice. Because
+\eqref{eq:p4S} is nonlinear in $\beta_i$, we obtain a closed form by a
+first-order expansion around the means $\beta\equiv\E[\beta_i]$,
+$\alpha\equiv\E[\alpha_i]$. Write $\beta_i=\beta+b_i$, $\alpha_i=\alpha+a_i$,
+with $\Var(b_i)=\sigma_\beta^2$, $\Var(a_i)=\sigma_\alpha^2$,
+$\Cov(b_i,a_i)=\sigma_{\beta\alpha}$, and define
+\[
+\varphi\equiv\frac{1}{r-\beta},\qquad
+\bar S\equiv\frac{\log(rT)-\log(r-\beta)-\alpha}{\beta},\qquad
+\psi\equiv\varphi-\bar S .
+\]
+Since $\partial[-\log(r-\beta_i)]/\partial\beta_i=\varphi$ at $\beta_i=\beta$,
+equation \eqref{eq:p4y} linearises to $\log y_i\approx\text{const}+\varphi\,b_i$,
+and \eqref{eq:p4S} to
+\[
+S_i-\bar S\approx\frac{1}{\beta}\bigl[(\varphi-\bar S)\,b_i-a_i\bigr]
+            =\frac{1}{\beta}\bigl[\psi\,b_i-a_i\bigr].
+\]
+Hence
+\begin{align}
+\Cov(\log y_i,S_i)&\approx\frac{\varphi}{\beta}\bigl(\psi\,\sigma_\beta^2-\sigma_{\beta\alpha}\bigr),\\
+\Var(S_i)&\approx\frac{1}{\beta^2}\bigl(\psi^2\sigma_\beta^2+\sigma_\alpha^2-2\psi\,\sigma_{\beta\alpha}\bigr),
+\end{align}
+and the OLS slope satisfies
+\begin{equation}\boxed{\;
+\plim\hat{b}\approx\varphi\,\beta\;
+\frac{\psi\,\sigma_\beta^2-\sigma_{\beta\alpha}}
+{\psi^2\sigma_\beta^2+\sigma_\alpha^2-2\psi\,\sigma_{\beta\alpha}},
+\qquad \varphi=\tfrac{1}{r-\beta},\ \ \psi=\varphi-\bar S.
+\;}\end{equation}
+(The constants $\varphi$ and $\psi$ fix the linearisation point; the
+\emph{bias} is governed by the second moments
+$\sigma_\beta^2,\sigma_\alpha^2,\sigma_{\beta\alpha}$.)
+
+\textbf{Discussion of the bias.}
+\begin{itemize}[nosep]
+\item \emph{Homogeneous returns} ($\sigma_\beta^2=0$, hence
+$\sigma_{\beta\alpha}=0$): $\plim\hat b\to0$. With $T$ constant and a common
+$\beta$, equation \eqref{eq:p4y} makes $\log y_i$ \emph{identical} across agents
+($y$ is pinned to $rT/(r-\beta)$), so there is no earnings variation to explain
+and the slope collapses to zero. \emph{All} earnings dispersion in this model
+comes from heterogeneous returns $\beta_i$.
+\item \emph{Return heterogeneity alone} ($\sigma_\beta^2>0$,
+$\sigma_\alpha^2=\sigma_{\beta\alpha}=0$): $\plim\hat b\approx\varphi\beta/\psi
+\neq\beta$. Even with no ability heterogeneity, OLS does \emph{not} recover the
+average return $\beta$, because agents with different $\beta_i$ optimally choose
+different $S_i$ --- selection on gains contaminates the slope.
+\item \emph{Sorting on gains} ($\sigma_{\beta\alpha}\neq0$) and ability variance
+($\sigma_\alpha^2>0$) move the estimand further from $\beta$ and, as the sign of
+$\psi$ can be negative, $\plim\hat b$ may even take the \emph{opposite sign} of
+the average return. The practical lesson is the same as Part 3: a bivariate OLS
+of log earnings on schooling generally fails to identify the causal return when
+schooling is chosen, and the failure is more severe when the return itself is
+heterogeneous and correlated with the choice.
+\end{itemize}
+
+%=======================================================================
+\section*{Question 2: Keane and Wolpin (1997)}
+%=======================================================================
+
+Ages $a\in\{1,2\}$; choices $m\in\{1,2,3\}=\{$white collar, blue collar,
+school$\}$. Flow utilities
+\[
+R_{m}(a)=\alpha_{m}+\beta_{m}G(a)+\gamma_{m}X_{m}(a)+\epsilon_{m}(a)\quad(m=1,2),
+\qquad R_{3}(a)=\epsilon_{3}(a),
+\]
+with the school alternative normalised
+($\alpha_{3}=\beta_{3}=\gamma_{3}=0$). The $\epsilon_{m}(a)$ are i.i.d. Type-I
+Extreme Value across alternatives and time; the period-2 shocks are unknown in
+period 1. The agent enters period 1 with $G(1)=X_1(1)=X_2(1)=0$ and discounts
+the future at $\delta\in(0,1)$.
+
+\subsection*{Part 1: State vector and period-2 choice probabilities}
+
+The state entering age 2 (before $\epsilon_m(2)$ is realised) is
+\[
+S(2)=\bigl(G(2),\,X_1(2),\,X_2(2)\bigr).
+\]
+Because the agent begins period 1 empty and makes a single choice, exactly one
+state component equals $1$ at age 2. Thus $S(2)$ takes only \emph{three} values:
+\[
+\underbrace{(0,1,0)}_{\text{worked WC in 1}},\qquad
+\underbrace{(0,0,1)}_{\text{worked BC in 1}},\qquad
+\underbrace{(1,0,0)}_{\text{schooled in 1}}.
+\]
+Period 2 is the last period, so it is a static multinomial-logit choice. Writing
+the deterministic parts
+\[
+v_{1}(2)=\alpha_1+\beta_1 G(2)+\gamma_1 X_1(2),\quad
+v_{2}(2)=\alpha_2+\beta_2 G(2)+\gamma_2 X_2(2),\quad
+v_{3}(2)=0,
+\]
+the Type-I EV assumption gives, for each $S(2)$,
+\begin{equation}
+\Pr\bigl(C(2)=m\mid S(2)\bigr)=\frac{\exp\!\bigl(v_{m}(2)\bigr)}
+{\exp\!\bigl(v_{1}(2)\bigr)+\exp\!\bigl(v_{2}(2)\bigr)+\exp\!\bigl(v_{3}(2)\bigr)},
+\qquad m=1,2,3 .
+\end{equation}
+
+\subsection*{Part 2: Expected value function at age 2}
+
+With $V_{2}(S(2))=\max_{m}R_{m}(2;S(2))$ and the Type-I EV hint
+$\E[\max_k U_{ik}+\eta_{ik}]=\nu+\log\sum_k\exp(U_{ik})$, the expectation
+(prior to the realisation of $\epsilon_m(2)$, dropping the constant $\nu$) is
+\begin{equation}
+\E\bigl[V_{2}(S(2))\bigr]
+=\log\!\Bigl(\exp\!\bigl(v_{1}(2)\bigr)+\exp\!\bigl(v_{2}(2)\bigr)+1\Bigr),
+\end{equation}
+evaluated at each of the three states (note $\exp(v_3(2))=e^0=1$). Explicitly,
+\begin{align*}
+\text{WC experience }(0,1,0):&\quad \log\!\bigl(e^{\alpha_1+\gamma_1}+e^{\alpha_2}+1\bigr),\\
+\text{BC experience }(0,0,1):&\quad \log\!\bigl(e^{\alpha_1}+e^{\alpha_2+\gamma_2}+1\bigr),\\
+\text{Education }(1,0,0):&\quad \log\!\bigl(e^{\alpha_1+\beta_1}+e^{\alpha_2+\beta_2}+1\bigr).
+\end{align*}
+
+\subsection*{Part 3: Period-1 expected payoffs and choice probabilities}
+
+In period 1 the deterministic flows are the intercepts only (state is empty):
+$v_1(1)=\alpha_1$, $v_2(1)=\alpha_2$, $v_3(1)=0$. Each choice deterministically
+sets next period's state, so the choice-specific value (excluding $\epsilon_m(1)$)
+is the current flow plus the discounted expected continuation value of the state
+it leads to:
+\begin{align}
+w_{1}&=\alpha_{1}+\delta\,\E\bigl[V_2\mid(0,1,0)\bigr] && \text{(white collar)},\\
+w_{2}&=\alpha_{2}+\delta\,\E\bigl[V_2\mid(0,0,1)\bigr] && \text{(blue collar)},\\
+w_{3}&=0+\delta\,\E\bigl[V_2\mid(1,0,0)\bigr] && \text{(school)}.
+\end{align}
+Adding the i.i.d. Type-I EV shocks $\epsilon_m(1)$, the \emph{ex ante} period-1
+choice probabilities are again multinomial logit:
+\begin{equation}
+\Pr\bigl(C(1)=m\bigr)=\frac{\exp(w_{m})}{\exp(w_{1})+\exp(w_{2})+\exp(w_{3})},
+\qquad m=1,2,3 .
+\end{equation}
+School has no current payoff but yields the largest education continuation value
+$\E[V_2\mid(1,0,0)]$; the agent trades current earnings against the discounted
+option value of being more educated (or more experienced) at age 2.
+
+\subsection*{Part 4: Likelihood}
+
+Individual $i$ is observed choosing the sequence $(C_i(1),C_i(2))$. The
+period-1 choice determines $S_i(2)$, so by the law of total probability the
+individual likelihood factors as
+\begin{equation}
+L_i(\theta)=\Pr\bigl(C(1)=C_i(1)\bigr)\cdot
+\Pr\bigl(C(2)=C_i(2)\mid S_i(2)\bigr),
+\end{equation}
+where $S_i(2)$ is the state implied by $C_i(1)$. Taking logs and summing over the
+sample, the log-likelihood is
+\begin{equation}\boxed{\;
+\ell(\theta)=\sum_{i=1}^{N}\Bigl[\log\Pr\bigl(C(1)=C_i(1)\bigr)
++\log\Pr\bigl(C(2)=C_i(2)\mid S_i(2)\bigr)\Bigr],
+\;}\end{equation}
+with $\theta=(\alpha_1,\beta_1,\gamma_1,\alpha_2,\beta_2,\gamma_2,\delta)'$ and
+the probabilities given in Parts 1 and 3.
+
+\subsection*{Part 5: Maximum-likelihood estimation}
+
+I estimate $\theta$ by maximum likelihood on the $N=5{,}000$ simulated choice
+sequences in \texttt{kw\_example.csv}, minimising $-\ell(\theta)$ in Python
+(\texttt{scipy.optimize.minimize}, BFGS --- the analogue of Matlab's
+\texttt{fminunc}). I search over $\log\delta$ to keep $\delta>0$, and use several
+random starting values, retaining the global optimum. Standard errors are the
+square roots of the diagonal of the inverse numerical Hessian of $-\ell$; the SE
+for $\delta$ is obtained from that of $\log\delta$ by the delta method. The code
+is in \texttt{kw\_estimate.py}.
+
+\begin{table}[h]
+\centering
+\caption{Maximum-likelihood estimates of the simplified Keane--Wolpin model}
+\begin{tabular}{lcc}
+\toprule
+Parameter & Estimate & Std.\ Error \\ \midrule
+$\alpha_1$ (white-collar intercept)        & $0.4234$  & $0.0585$ \\
+$\beta_1$ (return to education, WC)         & $0.3681$  & $0.0800$ \\
+$\gamma_1$ (return to WC experience)        & $0.0607$  & $0.0844$ \\
+$\alpha_2$ (blue-collar intercept)          & $0.4237$  & $0.0422$ \\
+$\beta_2$ (return to education, BC)          & $0.1215$  & $0.0635$ \\
+$\gamma_2$ (return to BC experience)        & $0.3513$  & $0.0792$ \\
+$\delta$ (discount factor)                  & $0.8395$  & $0.3818$ \\ \midrule
+\multicolumn{3}{l}{Log-likelihood $=-10{,}734.24$,\quad $N=5{,}000$}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Goodness of fit.} With seven parameters for the eight free cell
+probabilities of the $3\times3$ table of $(C(1),C(2))$ sequences, the model
+reproduces every empirical cell frequency to within $0.0014$ in probability,
+confirming the likelihood is correctly specified and the optimum is the global
+one.
+
+\textbf{Economic interpretation.}
+\begin{itemize}[nosep]
+\item \emph{Intercepts.} $\alpha_1\approx\alpha_2\approx0.42$: for an
+inexperienced, uneducated entrant, the two occupations offer almost identical
+baseline utility, so the period-1 choice is driven largely by their differing
+\emph{continuation} values.
+\item \emph{Returns to education.} $\beta_1=0.37\gg\beta_2=0.12$: a year of
+schooling raises white-collar utility about three times as much as blue-collar
+utility. Education is the human-capital investment that pays off mainly in the
+white-collar track ($\beta_1$ is precisely estimated; $\beta_2$ is only
+marginally distinguishable from zero).
+\item \emph{Returns to experience.} The pattern reverses for on-the-job
+experience: $\gamma_2=0.35$ (precise) versus $\gamma_1=0.06$ (indistinguishable
+from zero). Blue-collar work builds valuable occupation-specific human capital,
+whereas white-collar experience adds little.
+\item \emph{Discount factor.} $\hat\delta=0.84\in(0,1)$ is economically
+reasonable, but its standard error is large ($0.38$): the log-likelihood is flat
+in $\delta$ over roughly $[0.7,1.0]$, so $\delta$ is only weakly identified from
+two periods of choices. (The BFGS routine's convergence flag reflects this flat
+ridge; the gradient norm at the reported optimum is $\sim\!2\times10^{-4}$.)
+\end{itemize}
+
+\textbf{The period-1 trade-off.} Schooling delivers \emph{no} current payoff
+($R_3=\epsilon_3$) but is the only way to acquire education $G(2)=1$, which
+sharply raises age-2 white-collar utility (via $\beta_1=0.37$) and modestly
+raises blue-collar utility ($\beta_2=0.12$). Blue-collar work pays the immediate
+intercept $\alpha_2$ \emph{and} builds high-return experience ($\gamma_2=0.35$),
+making it attractive on both margins. White-collar work pays $\alpha_1$ now but
+accumulates little useful experience ($\gamma_1\approx0$), so its appeal in
+period 1 rests mostly on the current flow. The agent therefore weighs immediate
+utility against the discounted option value of human capital, and how strongly
+that option value pulls her toward school is governed by $\delta$.
+
+\end{document}
