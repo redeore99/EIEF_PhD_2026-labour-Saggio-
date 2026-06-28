@@ -32,24 +32,24 @@ Grading is assigned as follows:
 
 ## Papers to Referee
 
-Each student will be randomly assigned **one** of the following papers to referee. Papers are grouped by macro area.
+Papers are grouped by macro area. **Assignments are final** — find your email handle in the last column.
 
-| Macro Area | Paper | Author(s) | Link |
-|------------|-------|-----------|------|
-| **Human Capital / Selection** | Affirmative Action, Mismatch, and Economic Mobility after California's Proposition 209 | Zachary Bleemer | [link](https://academic.oup.com/qje/article/137/1/115/6360982?guestAccessKey=95fdbb6a-a289-4d5e-850f-cc3e162b0426&login=false) |
-| | Community Colleges and Upward Mobility | Jack Mountjoy | [link](https://www.aeaweb.org/articles?id=10.1257/aer.20181756) |
-| | The Demand for Effective Charter Schools | Chris Walters | [link](https://drive.google.com/file/d/18xkGaVda_6PeY21InxXEW2iW6Xjwock4/view) |
-| **Labor Demand / Wage Inequality** | Trade Adjustment: Worker-Level Evidence | David Autor et al. | [link](https://economics.mit.edu/sites/default/files/publications/trade%20adjustment%202014.pdf) |
-| | The Skill Complementarity of Broadband Internet | Mogstad et al. | [link](https://www.dropbox.com/scl/fi/fqtav3fk3nxloup0hag4e/internet_and_productivity_final_QJE_aa.pdf?rlkey=z29s4g3cb15rsefrjczhckr2m&e=1&dl=0) |
-| | Skill-Replacing Technology and Bottom-Half Inequality | Oren Danieli | [link](https://www.dropbox.com/scl/fi/i6lpe74nc4zyuq49g2mkw/full-paper.pdf?rlkey=ug2csecbh60jgk0qbvbu5f7vw&e=1&dl=0) |
-| **Unemployment** | Wage Insurance for Displaced Workers | Kovak et al. | [link](https://static1.squarespace.com/static/5acbd8e736099b27ba4cfb36/t/667b0dfc65b4380fd98a61e6/1719340554742/HKL_Wage_Insurance.pdf) |
-| | Evidence on Job Search Models from a Survey of Unemployed Workers in Germany | DellaVigna et al.| [link](https://drive.google.com/file/d/1rBsIkolZJWHvwexHNudyLvSuDYwSlx0u/view) |
-| **Minimum Wages** | The Effect of Minimum Wages on Low-Wage Jobs | Cengiz et al. | [link](https://academic.oup.com/qje/article-abstract/134/3/1405/5484905?redirectedFrom=fulltext) |
-| | Who's Afraid of the Minimum Wage? Measuring the Impacts on Independent Businesses Using Matched U.S. Tax Returns | Rao & Rinsch | [link](https://drive.google.com/file/d/1_0qhHs0v1rLUvQxKFL1iJTJuIPrlfq9-/view) |
-| **Firms / Monopsony** | Flexible Wages, Bargaining, and the Gender Gap | Biasi & Sarsons | [link](https://academic.oup.com/qje/article-abstract/137/1/215/6352976?login=false) |
-| | Voluntary Minimum Wages: The Local Labor Market Effects of National Retailer Policies | Derenoncourt & Weil | [link](https://www.dropbox.com/scl/fi/k577wgjdzqcs01gi7aulo/Voluntary_Minimum_Wages_Submission_Version.pdf?rlkey=fdjnb0tk2ppoe1tzyilso9fd1&e=1&dl=0) |
-| | Collusion Among Employers in India | Garima Sharma | [link](https://garimasharma.com/files/collusion_gs.pdf) |
-| | The Gender Pay Gap: Micro Sources and Macro Consequences | Morchio & Moser | [link](https://static1.squarespace.com/static/560a9916e4b0e4c1ab5747fa/t/69f395b6bba0eb2e766b0681/1777571254811/MM2026.pdf) |
+| Macro Area | Paper | Author(s) | Link | Assigned to |
+|------------|-------|-----------|------|-------------|
+| **Human Capital / Selection** | Affirmative Action, Mismatch, and Economic Mobility after California's Proposition 209 | Zachary Bleemer | [link](https://academic.oup.com/qje/article/137/1/115/6360982?guestAccessKey=95fdbb6a-a289-4d5e-850f-cc3e162b0426&login=false) | fmazzarda |
+| | Community Colleges and Upward Mobility | Jack Mountjoy | [link](https://www.aeaweb.org/articles?id=10.1257/aer.20181756) | mattolini |
+| | The Demand for Effective Charter Schools | Chris Walters | [link](https://drive.google.com/file/d/18xkGaVda_6PeY21InxXEW2iW6Xjwock4/view) | ilasys |
+| **Labor Demand / Wage Inequality** | Trade Adjustment: Worker-Level Evidence | David Autor et al. | [link](https://economics.mit.edu/sites/default/files/publications/trade%20adjustment%202014.pdf) | ellestina.jumbe |
+| | The Skill Complementarity of Broadband Internet | Mogstad et al. | [link](https://www.dropbox.com/scl/fi/fqtav3fk3nxloup0hag4e/internet_and_productivity_final_QJE_aa.pdf?rlkey=z29s4g3cb15rsefrjczhckr2m&e=1&dl=0) | alisovaia |
+| | Skill-Replacing Technology and Bottom-Half Inequality | Oren Danieli | [link](https://www.dropbox.com/scl/fi/i6lpe74nc4zyuq49g2mkw/full-paper.pdf?rlkey=ug2csecbh60jgk0qbvbu5f7vw&e=1&dl=0) | pfiorentini |
+| **Unemployment** | Wage Insurance for Displaced Workers | Kovak et al. | [link](https://static1.squarespace.com/static/5acbd8e736099b27ba4cfb36/t/667b0dfc65b4380fd98a61e6/1719340554742/HKL_Wage_Insurance.pdf) | lwang |
+| | Evidence on Job Search Models from a Survey of Unemployed Workers in Germany | DellaVigna et al.| [link](https://drive.google.com/file/d/1rBsIkolZJWHvwexHNudyLvSuDYwSlx0u/view) | jluo |
+| **Minimum Wages** | The Effect of Minimum Wages on Low-Wage Jobs | Cengiz et al. | [link](https://academic.oup.com/qje/article-abstract/134/3/1405/5484905?redirectedFrom=fulltext) | apace |
+| | Who's Afraid of the Minimum Wage? Measuring the Impacts on Independent Businesses Using Matched U.S. Tax Returns | Rao & Rinsch | [link](https://drive.google.com/file/d/1_0qhHs0v1rLUvQxKFL1iJTJuIPrlfq9-/view) | ffaieta |
+| **Firms / Monopsony** | Flexible Wages, Bargaining, and the Gender Gap | Biasi & Sarsons | [link](https://academic.oup.com/qje/article-abstract/137/1/215/6352976?login=false) | cbianchi |
+| | Voluntary Minimum Wages: The Local Labor Market Effects of National Retailer Policies | Derenoncourt & Weil | [link](https://www.dropbox.com/scl/fi/k577wgjdzqcs01gi7aulo/Voluntary_Minimum_Wages_Submission_Version.pdf?rlkey=fdjnb0tk2ppoe1tzyilso9fd1&e=1&dl=0) | valeriofedele.addis |
+| | Collusion Among Employers in India | Garima Sharma | [link](https://garimasharma.com/files/collusion_gs.pdf) | psuarez |
+| | The Gender Pay Gap: Micro Sources and Macro Consequences | Morchio & Moser | [link](https://static1.squarespace.com/static/560a9916e4b0e4c1ab5747fa/t/69f395b6bba0eb2e766b0681/1777571254811/MM2026.pdf) | gbrendolin |
 
 Each referee report should: (i) carefully summarize the paper, highlighting what its key contributions are and establishing any useful links with the material presented in class; (ii) provide a critical assessment of the paper, as if you were a referee. In addressing point (ii) above, you can also discuss future directions of research that you think this paper opens up and/or ways in which you would improve upon the paper (be concrete here: why might pursuing this extension be useful? would it be a valuable contribution? which data would you use? which research design?).
 

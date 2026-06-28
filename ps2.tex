@@ -1,0 +1,205 @@
+%% LyX 2.4.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=1in,headsep=1in,footskip=1in}
+\usepackage{amsmath}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\date{Due: Monday June 30th at 9:00 CET}
+% Added by lyx2lyx
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\title{Problem Set 2}
+\maketitle
+\begin{center}
+    Answers must be typed. Send solutions to raffaele.saggio@ubc.ca. You can work in teams under the constraint $\max(Team Size)=2$
+\par\end{center}
+
+
+\subsection*{Question 1: Katz and Murphy (1992)}
+
+Consider the constant elasticity of substitution (CES) production function
+\begin{equation}
+F_{t}(H_{t},L_{t}) = \left(A_{H_{t}}H_{t}^{\frac{\sigma-1}{\sigma}}+A_{L_{t}}L_{t}^{\frac{\sigma-1}{\sigma}}\right)^{\frac{\sigma}{\sigma-1}}
+\end{equation}
+where $\sigma$ is the elasticity of substitution between high and low skilled labor. For now, assume that labor supply is perfectly elastic.
+
+a) Start by considering some special cases of the CES production function
+\begin{itemize}
+\item Take the limit of $F_{t}$ as $\sigma\rightarrow 0$. What is the production function?
+\item Take the limit of $F_{t}$ as $\sigma\rightarrow \infty$. What is the production function?
+\item Take the limit of $F_{t}$ as $\sigma\rightarrow 1$. What is the production function?
+\end{itemize}
+
+b) Assume a perfectly competitive input market. Derive the skill premium $\log \omega_{t}=\log(\dfrac{w_{H_{t}}}{w_{L_{t}}})$ where $w_{H}$ and $w_{L}$ are the wages paid to high and low skilled workers, as a function of the exogenous parameter of the model. What is the  effect of skill biased technological change on the skill premium, $\dfrac{\partial \log \omega_{t}}{\partial \log \frac{A_{H_{t}}}{A_{L_{t}}} }$? What is the effect due to an increase in the relative supply of high skilled workers,  $\dfrac{\partial \log \omega_{t}}{\partial \log \frac{{H_{t}}}{{L_{t}}} }$?
+
+c) Now suppose that labor supply is elastic. The labor supply functions are given by
+\begin{equation}
+H_{t} = H_{0t}w_{H_{t}}^{\epsilon}
+\end{equation}
+\begin{equation}
+L_{t} = L_{0t}w_{L_{t}}^{\epsilon}
+\end{equation}
+where $\epsilon$ is the elasticity of labor supply. Derivate a new expression for the skill premium as a function of the exogenous parameters of the model. What is the effect of skill biased technological  change on the skill premium? What is the effect of an exogenous increase in the relative labor supply $\log \frac{{H_{0t}}}{{L_{0t}}}$ ?
+
+d) Suppose that technology evolves according to a stochastic time trend
+
+\begin{equation}
+\log \frac{A_{H_{t}}}{A_{L_{t}}} = \lambda_{0} + \lambda_{1}t+e_{t}
+\end{equation}
+
+where $e_{t}$ is an iid idiosyncratic error term with variance $V_{e}$. The exogenous component of labour supply is given by
+\begin{equation}
+\log \frac{{H_{0t}}}{{L_{0t}}} = \psi_{0} + \nu_{t}
+\end{equation}
+where $\nu_{t}$ is another iid idiosyncratic error term with variance $V_{\nu}$. Consider running a Katz and Murphy style OLS regression of the type
+\begin{equation}
+\log \omega_{t} = \beta_{0}+\beta_{1} t + \beta_{2} \log (\frac{H_{t}}{L_{t}}) + u_{t}
+\end{equation}
+
+Start by assuming that labor supply is elastic. Derive formulas for the population OLS coefficients $\beta_{1}$ and $\beta_{2}$ as a function of the structural parameters of the model. Then consider the cases where (a) $\epsilon=0$, (b) $V_{e}=0$ and (c) $V_{\nu}=0$. In what cases is $\beta_{2}$ equal to the inverse of subtitution elasticity $-\dfrac{1}{\sigma}$? In what cases is $\beta_{1}$ equal to the true trend in technology $\lambda_{1}$?.
+
+e) In view of your results in part (d), comment on the assumptions required for the Katz and Murphy style regression to be meaningful. Do you find these assumptions plausible?
+
+
+\subsection*{Question 2: Skill Aggregation and Skill Prices}
+
+Suppose output in a sector is produced according to the following
+function
+
+\[
+Q=\left(\sum\limits _{i}A_{i}\right)^{\alpha}\left(\sum\limits _{i}M_{i}\right)^{\beta}\left(\sum\limits _{i}A_{i}M_{i}\right)^{1-\alpha-\beta}
+\]
+
+where $A_{i}$ is employee $i$'s analytical ability and $M_{i}$
+is their motivation. Such a production process exhibits strong complementarities
+between individual productivities, if one individual has very low
+ability or motivation it can bring down the output of the entire firm.
+There are two types of employees: Hippies $\left(H\right)$ and Nerds
+$\left(N\right)$. Each Hippy supplies one unit of motivation and
+two units of analytical ability. Each Nerd supplies one unit of ability
+and three units of motivation. Note: it is useful to read Rosen (1983,
+Journal of Human Resources) before attempting this question.
+
+\bigskip{}
+
+a) Verify that $Q$ exhibits CRTS in $H$ and $N$. What is the elasticity
+of substitution between $H$ and $N$?
+
+\bigskip{}
+
+b) Assume $\alpha+\beta=1$. Derive a relationship between the wages
+of workers and the marginal productivity of skills. Do the same when
+$\alpha+\beta<1$. Comment on the usefulness of the notion of skill
+prices.
+
+
+\subsection*{Question 3: On-the-Job Search}
+
+This exercise will guide you over a search model with on-the-job search. As in the model seen in class, time is discrete (in months) and individuals are infinitely lived and risk neutral.
+
+Assume that a person employed in a job that pays wage $w$ enjoys a flow utility of $w-c$ where $c$ represents the disutility of work. A person who is searching for a job enjoys a flow utility of $b$, where $b$ is the unemployment benefit (in CAD). There exists a probability $\lambda$ that an individual receives a job offer in each period, irrespective of whether this individual is currently employed or not.  There is also a probability $\delta$ that a given job is going to be destroyed at the end of each period. There are two value functions: a value of $V$ if unemployed (and searching). A value $U(w)$ if holding a job that pays a wage equal to $w$. Let $F(w)$ ($f(w)$) represents the cdf (pdf) of wage offers that an individual might receive (this distribution is the same irrespective of whether the individual is currently employed or not).
+
+We will make two further (and final) simplifying assumptions. First, we assume that payment of both wages and unemployment benefits occur at end of each month. Hence, flow utilities associated with both $V$ and $U$ are going to be discounted in this model (by $\frac{1}{1+r})$. Second,  newly accepted jobs also have a probability, $\delta$, of being destroyed when entering the next period (so if you receive a job offer at the end of the period there is a probability $\delta$ that this job will disappear in the next period).
+
+a) Let the value of being employed at wage $w$, $U(w)$, be
+
+\begin{equation}
+\label{base}
+U(w) = \dfrac{w-c}{1+r}+\dfrac{1}{1+r}\lambda(1-F(w))\left[\delta V + (1-\delta)\int_{w}^{\infty}U(\omega)\dfrac{f(\omega)}{1-F(w)}d\omega\right] + \dfrac{1}{1+r}(1-\lambda(1-F(w)))\left[\delta V + (1-\delta)U(w)\right]
+\end{equation}
+
+Explain the economic intuition and logic behind  each single piece composing this formula.
+
+b) Now use the economic reasoning that you have provided in the previous part to express the value of being employed, $V$, for a given reservation wage $w^{*}$.
+
+c) Based on the expression in part (a) and your answer to part (b), prove that the reservation wage $w^{*}=b+c$. What is the intuition behind this formula? Why this expression is different compared to the simplest model with no on the job search shown in class?
+
+d) What is the expected duration of unemployment in this model? What is the expected wage when exiting unemployment? How do these two expressions vary with $b$? Comment on your results based in light of the discussion that we had in class on the policy implications of extending unemployment benefits.
+
+e) Now suppose that the support of the wage distribution is $[0;\bar{w}]$. Derive an expression for $U(\bar{w})$. Derive an expression for $U(w^{*})$. Provide some intuition about these expressions.
+
+f) Compute the derivative $U'(w)$. What is $U'(\bar{w})$? Draw a picture of $U(w)$ and $V$.
+
+g) Next, you will derive a numerical procedure to solve for $U(w)$. Use the fact that $V=U(w^{*})$, to prove that $U(w)$ in (\ref{base}) can be expressed as
+
+\begin{equation}
+\label{base_f}
+U(w) = \dfrac{w-c}{r+\delta}+\dfrac{\delta U(b+c)}{r+\delta}+\dfrac{\lambda(1-\delta)}{r+\delta}\int_{w}^{\bar{w}}(U(\omega)-U(w))f(\omega)d\omega]
+\end{equation}
+
+Note that this is a \textit{functional} equation $U(w)=T\{U(v)\}$, where $T$ maps from the space of functions to the space of functions and we are looking for a fixed point in $T$. Provided that $T$ is a contraction mapping, one can solve using a ``successive approximation" approach.
+
+Suppose that $b=800$, $c=0$, $\lambda=0.2$, $r=0.02$, and $\delta=0.25$. Also assume that $F(w)=N(1200,400)$ and with this distribution $\bar{w}=2500$ (which is almost true). Develop a numerical procedure to solve for $U(w)$ and $V$. (HINT: take a finite grid of points going from 0 to 2500. Provide an initial guess, $U^{1}(w)$ for all the discretized points of support that you have assumed. Then, using these initial guesses to form new guess of values $U^{2}(w)$ starting from the highest possible value of $\bar{w}$. Iterate until convergence.
+
+
+\subsection*{Question 4: Monopsony and Wage Posting}
+
+In the Burdett-Mortensen model, firms are indifferent between wage
+levels and play a mixed wage strategy. This question asks whether
+a static wage posting model can yield similar indifference to wage
+levels.
+
+Suppose a monopsonistic firm faces a labor supply schedule $L\left(w\right)$,
+a linear production technology, and a constant output price $P$ so
+that its profit function is:
+\[
+\pi\left(w\right)=PL\left(w\right)-wL\left(w\right)
+\]
+
+a) Derive the first order condition for a profit maximizing wage
+
+b) Propose a labor supply schedule $L\left(w\right)$ such that the
+profit function is insensitive to the wage.
+
+c) Does your answer to b) imply an elasticity of labor supply to the
+firm that is increasing or decreasing in the wage? Do you think this
+is empirically plausible? Why or why not?
+
+d) Use your answer to b) to plot the inverse labor supply function
+$L^{-1}\left(w\right)=w\left(L\right)$ in a graph where the y-axis
+is the wage and the x-axis is $L$. Also plot the marginal factor
+cost in this graph and the inverse labor demand schedule. What features
+of this graph allow for multiple equilibria?
+
+e) Working again with the supply locus in part b), suppose the firm
+starts at wage $w^{*}<P/2$. What happens to employment (i.e. ``firm
+size'') if a minimum wage is introduced at $\frac{P}{2}$? Provide
+a graph illustrating your answer.
+
+
+\subsection*{Question 5: Firm Pay, Amenities, and Compensating Differentials}
+
+(Hint: It is useful to read Sorkin (2018) before attempting to answer this question)
+Suppose that utility from being employed by a given firm $j$ is equal to
+\begin{equation}
+    V_{j} = \log(\psi_{j}) + \phi \log(a_{j})
+\end{equation}
+where $\phi>0$; $\psi_{j}$ is the pay offered by firm $j$ to its employees and $a_{j}$ is some unobserved amenity offered by firm $j$. Each firm is endowed with some level of productivity $p_{j}$ and costs of supplying the amenity equal to $c_{j}$ so that firm $j$ profits are given by
+
+\begin{equation}
+    \pi_{j}(\psi_{j},a_{j}) = p_{j}-c_{j}a_{j}-\psi_{j}.
+\end{equation}
+Furthermore, each firm in this model is endowed with different levels of utility provisions, $\bar{V}_{j}$. Effectively, this means that in order to operate in the labor market, each firm needs to offer at least $\bar{V}_{j}$ utils to workers. Derive an expression for $\log(\psi_{j})$ and $\log(a_{j})$ set by firm $j$.
+
+b) Suppose all firms offer the same level of utility: $\bar{V}_{j}=\bar{V}$, $\forall j$. What is the implied correlation b/w $\log(\psi_{j})$ and $\log(a_{j})$? What is the intuition behind this result?
+
+c) Suppose all firms have the same technology in delivering the amenity $a_{j}$: $c_{j}=\bar{c} \forall j$. What is the implied correlation b/w $\log(\psi_{j})$ and $\log(a_{j})$? What is the intuition behind this result?
+
+d) Derive a general expression for $Cov(\log(\psi_{j}),\log(a_{j}))$. Is it possible that this covariance is positive? Give some intuition for why that might be the case and comment your result in light of the compensating differential theory discussed in class.
+
+e) Suppose that you have data on $\psi_{j}$ and $\bar{V}_{j}$. Consider the regression of $\log(\psi)_{j}$  on $\bar{V}_{j}$ (and a constant). Write down an expression for the slope coefficient obtained from this regression. Does that regression coefficient identify any structural parameter?
+
+f) Now consider the residual from a regression of $\log(\psi_{j})$  on $\bar{V}_{j}$. Express the variance of this residual in terms of variances and covariances of $c_{j}$ and $\bar{V}_{j}$. In the lens of this model, what does this variance represent? Can one, therefore, identify the percentage of the variance in firm-pay that is driven by what Sorkin (2018) calls ``Rosen-Motives"?
+
+
+\end{document}

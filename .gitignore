@@ -2,6 +2,7 @@
 human_capital_derivations.tex
 human_capital_derivations.pdf
 students_roster.md
+referee_preferences.md
 
 # Build artifacts / auxiliary files
 aux/
@@ -17,3 +18,5 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.stswp
+*(busy)
