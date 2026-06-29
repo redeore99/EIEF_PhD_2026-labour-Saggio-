@@ -14,7 +14,7 @@
 
 \input{Macros.tex}
 
-\title{Problem Set 2 --- Solutions\\
+\title{Problem Set 2: Solutions\\
 \large Labor Economics (Saggio), Summer 2026}
 \author{Pablo Fiorentini}
 \date{}
@@ -53,15 +53,15 @@ $\boxed{F\rightarrow\min\{H_{t},L_{t}\}}$: high- and low-skill labor are
 $1/\rho\rightarrow1$ and $\boxed{F\rightarrow A_{H_t}H_{t}+A_{L_t}L_{t}}$: the two skill
 groups are \emph{perfect substitutes}.
 
-\paragraph{$\sigma\rightarrow1$ ($\rho\rightarrow0$): Cobb--Douglas.} Using
+\paragraph{$\sigma\rightarrow1$ ($\rho\rightarrow0$): Cobb-Douglas.} Using
 $A_{H}H^{\rho}=A_{H}e^{\rho\log H}=A_{H}(1+\rho\log H+O(\rho^{2}))$,
 \[
 \log F=\tfrac1\rho\log\!\bigl(A_{H}+A_{L}\bigr)
   +\frac{A_{H}\log H+A_{L}\log L}{A_{H}+A_{L}}+O(\rho).
 \]
-The first term diverges unless $A_{H}+A_{L}=1$. Under the natural Katz--Murphy
+The first term diverges unless $A_{H}+A_{L}=1$. Under the natural Katz-Murphy
 normalization $A_{H_t}+A_{L_t}=1$ (the weights are shares) it vanishes and
-$\boxed{F\rightarrow H_{t}^{A_{H_t}}L_{t}^{A_{L_t}}}$, Cobb--Douglas with
+$\boxed{F\rightarrow H_{t}^{A_{H_t}}L_{t}^{A_{L_t}}}$, Cobb-Douglas with
 unit elasticity of substitution.
 
 \subsection*{Part (b): the skill premium with inelastic supply}
@@ -81,7 +81,7 @@ $\rho-1=-1/\sigma$,
 \;\Longrightarrow\;
 \boxed{\;\log\omega_{t}=\log\frac{A_{H_t}}{A_{L_t}}-\frac1\sigma\log\frac{H_t}{L_t}\;}
 \end{equation}
-This is the canonical Katz--Murphy relative-demand equation.
+This is the canonical Katz-Murphy relative-demand equation.
 \begin{itemize}[nosep]
 \item Skill-biased technical change:
 $\dfrac{\partial\log\omega_t}{\partial\log(A_{H_t}/A_{L_t})}=1>0$. A rise in
@@ -118,7 +118,7 @@ $\dfrac{\partial\log\omega_t}{\partial\log(H_{0t}/L_{0t})}
 =-\dfrac1{\sigma+\epsilon}$, also attenuated relative to $-1/\sigma$.
 \end{itemize}
 
-\subsection*{Part (d): the Katz--Murphy regression}
+\subsection*{Part (d): the Katz-Murphy regression}
 
 Let $a_t\equiv\log\frac{A_{H_t}}{A_{L_t}}=\lambda_0+\lambda_1 t+e_t$ and
 $s_t\equiv\log\frac{H_{0t}}{L_{0t}}=\psi_0+\nu_t$, with $e_t\perp\nu_t$ i.i.d.,
@@ -131,7 +131,7 @@ x_t\equiv\log\tfrac{H_t}{L_t}=\tfrac{\epsilon\sigma}{\sigma+\epsilon}a_t
 \end{equation}
 the second line obtained by inserting $\log\omega_t$ into \eqref{eq:relsupply}.
 We run $y_t=\beta_0+\beta_1 t+\beta_2 x_t+u_t$. Because $t$ is included, apply
-Frisch--Waugh--Lovell: project everything on $(1,t)$. Since $e_t,\nu_t$ are
+Frisch-Waugh-Lovell: project everything on $(1,t)$. Since $e_t,\nu_t$ are
 i.i.d.\ (orthogonal to $t$), the residualized regressors are
 \[
 \tilde y_t=\tfrac{\sigma}{\sigma+\epsilon}e_t-\tfrac1{\sigma+\epsilon}\nu_t,
@@ -203,8 +203,8 @@ of college vs.\ high-school labor is governed by slow-moving cohort sizes and
 schooling decisions taken years earlier; at annual frequency it is close to
 \emph{predetermined}. This is, implicitly, what KM rely on.
 \item $V_e=0$ (a purely deterministic, smoothly trending demand) is less
-believable literally---technology surely receives shocks---but is a reasonable
-approximation if those shocks are small relative to supply movements.
+believable literally, since technology surely receives shocks, but it is a
+reasonable approximation if those shocks are small relative to supply movements.
 \item The real danger is simultaneity: if demand has genuine high-frequency
 shocks ($V_e>0$) \emph{and} supply responds to wages ($\epsilon>0$), then
 $\beta_2$ is a variance-weighted average of $-1/\sigma$ and $1/\epsilon$ and is
@@ -212,7 +212,7 @@ biased \emph{upward} (toward zero/positive), while $\beta_1\neq\lambda_1$.
 \end{itemize}
 On balance the exercise is informative if one is willing to treat relative
 supply as predetermined, but the inference is fragile; this is exactly why the
-later literature (Card--Lemieux, Krusell et al., Acemoglu--Autor) enriches the
+later literature (Card-Lemieux, Krusell et al., Acemoglu-Autor) enriches the
 demand system and instruments relative supply.
 
 %=======================================================================
@@ -294,7 +294,7 @@ w(a,m)=p_A\,a+p_M\,m+p_B\,(a\,m),
 which is \emph{non-separable}: the marginal return to ability is
 $\partial w/\partial a=p_A+p_B\,m$, i.e.\ it depends on how much motivation the
 \emph{same} worker also supplies. \textbf{A single price of ``a unit of
-ability'' does not exist}---it is complementary with the worker's other skills.
+ability'' does not exist}: it is complementary with the worker's other skills.
 
 \paragraph{Usefulness of skill prices.} The notion is useful precisely when the
 aggregate skill quantities are sufficient statistics for output
@@ -304,7 +304,7 @@ characteristics, hedonic coefficients are interpretable, and statements like
 skills are bundled and complementary within individuals ($\alpha+\beta<1$, the
 $\sum A_iM_i$ term), the implicit price of a characteristic is worker-specific,
 no common skill price exists, and a linear hedonic regression misidentifies it.
-This is Rosen's (1983) and Heckman--Scheinkman's (1987) warning about
+This is Rosen's (1983) and Heckman-Scheinkman's (1987) warning about
 \emph{bundling}: aggregation into ``skill prices'' is legitimate only under
 strong separability of the technology.
 
@@ -388,7 +388,7 @@ $U(w^*)$ and at $V$, and they cancel: the worker accepts as soon as the flow
 payoff of working, $w-c$, covers the flow payoff of unemployment, $b$. In the
 basic McCall model \emph{without} on-the-job search, accepting a job forecloses
 further search (employment is absorbing), so the reservation wage embeds a
-strictly positive option value---$w^*$ exceeds $b$ ($+$disutility) by the
+strictly positive option value: $w^*$ exceeds $b$ ($+$disutility) by the
 expected gain from sampling better offers,
 $w^{*}=b-\nu+\tfrac1r\E[w-w^*\mid w\ge w^*](1-F(w^*))$, and the worker is
 ``picky.'' With OJS that motive disappears because she keeps the search option
@@ -417,7 +417,7 @@ the monthly exit hazard is $0.168$, expected duration is $5.94$ months, and the
 expected re-employment wage is $1{,}314$.
 
 \paragraph{Policy.} This is precisely the tension stressed in class around
-extending UI (Nekoei--Weber 2017): longer potential benefits raise reservation
+extending UI (Nekoei-Weber 2017): longer potential benefits raise reservation
 wages, increasing both unemployment duration (a moral-hazard / fiscal cost)
 \emph{and} re-employment wages (a match-quality benefit). The model rationalizes
 the empirical finding that UI extensions can \emph{raise} accepted wages through
@@ -537,7 +537,7 @@ w=\frac{\varepsilon_L}{1+\varepsilon_L}\,P,
 \]
 where $\varepsilon_L=\dfrac{L'(w)w}{L(w)}$ is the firm's labor-supply
 elasticity. The wage is marked down below the marginal product $P$ by the
-inverse elasticity---the monopsony wedge.
+inverse elasticity, the monopsony wedge.
 
 \subsection*{Part (b): a supply curve that makes profit wage-insensitive}
 
@@ -548,7 +548,7 @@ Require $\pi(w)=(P-w)L(w)=K$ constant. Then
 Indeed $\pi(w)=(P-w)\frac{K}{P-w}=K$ for every $w<P$, and one checks
 $(P-w)L'(w)=(P-w)\frac{K}{(P-w)^2}=\frac{K}{P-w}=L(w)$, so the first-order
 condition holds at \emph{every} wage: the firm is indifferent across the whole
-range---the static analogue of Burdett--Mortensen wage dispersion.
+range, the static analogue of Burdett-Mortensen wage dispersion.
 
 \subsection*{Part (c): the implied elasticity}
 
@@ -558,13 +558,13 @@ range---the static analogue of Burdett--Mortensen wage dispersion.
 \]
 which is \emph{increasing} in $w$: $\varepsilon_L\rightarrow0$ as $w\rightarrow0$ and
 $\varepsilon_L\rightarrow\infty$ as $w\rightarrow P$. Higher-wage firms face more elastic supply
-(less monopsony power)---directionally plausible. But the specific form is
+(less monopsony power), which is directionally plausible. But the specific form is
 knife-edge: it requires the elasticity to explode exactly as $w\rightarrow P$, whereas
 the empirical literature (e.g.\ Dube et al.\ discussed in class) finds finite,
 roughly \emph{constant} firm-level elasticities of order a few. A constant
 (isoelastic) supply curve, the usual empirical benchmark, would \emph{not}
 deliver wage-insensitive profits. So static wage posting reproduces
-Burdett--Mortensen indifference only under a non-robust supply schedule; the
+Burdett-Mortensen indifference only under a non-robust supply schedule; the
 genuine BM result rests on dynamic equilibrium forces, not a single firm's
 static supply curve.
 
@@ -584,8 +584,8 @@ rises toward $P$ from below (Figure~\ref{fig:q4mult}). Because the firm's
 marginal benefit of hiring ($P$) equals its marginal cost ($P$) at \emph{every}
 employment level, the optimality condition $\text{MFC}=\text{MRPL}$ holds
 everywhere: every point on the supply curve is an equilibrium, each delivering
-the same profit $K$. The coincidence of the MFC and demand schedules---rather
-than a unique crossing---is what generates the continuum of equilibria.
+the same profit $K$. The coincidence of the MFC and demand schedules, rather
+than a unique crossing, is what generates the continuum of equilibria.
 
 \begin{figure}[h]
 \centering
@@ -672,8 +672,8 @@ $\bar V_j$, so
 \]
 \textbf{Intuition.} When the cost of amenities is common but firms differ in the
 utility they deliver, high-$\bar V$ firms are simply ``better'': they pay more
-\emph{and} offer better amenities. This is \emph{vertical differentiation}---good
-firms vs.\ bad firms---and produces a positive pay--amenity correlation, the
+\emph{and} offer better amenities. This is \emph{vertical differentiation}, good
+firms versus bad firms, and produces a positive pay-amenity correlation, the
 opposite of compensating differentials.
 
 \subsection*{Part (d): the general covariance}
@@ -690,11 +690,11 @@ whenever firm heterogeneity is dominated by differences in deliverable utility
 $\bar V_j$ (vertical differentiation) rather than in amenity costs $c_j$. The
 sign is a horse race between the Rosen force (variation in $c_j$, pushing toward
 negative correlation) and the firm-quality force (variation in $\bar V_j$,
-pushing positive). A positive measured covariance---the empirical pattern that
-better-paying firms also have better amenities, and the ``no compensating
-differentials'' finding shown in class---therefore does \emph{not} reject
-compensating differentials; it merely says firm-quality dispersion outweighs
-amenity-cost dispersion.
+pushing positive). A positive measured covariance, namely the empirical pattern
+that better-paying firms also have better amenities (the ``no compensating
+differentials'' finding shown in class), therefore does \emph{not} reject
+compensating differentials; it merely says that firm-quality dispersion
+outweighs amenity-cost dispersion.
 
 \subsection*{Part (e): regressing $\log\psi_j$ on $\bar V_j$}
 
@@ -721,7 +721,7 @@ which after substitution collapses to
    =\frac{\phi^2}{(1+\phi)^2}\,\var\!\bigl(\log c_j\mid\bar V_j\bigr).}
 \end{equation}
 \textbf{Interpretation.} The residual is the part of firm pay \emph{not}
-explained by the firm's overall utility provision $\bar V_j$---it is the pay
+explained by the firm's overall utility provision $\bar V_j$: it is the pay
 variation driven by differences in the cost of amenities $c_j$ (orthogonal to
 $\bar V_j$). Firms with high amenity costs pay more to compensate, for reasons
 unrelated to how ``good'' the firm is. This is exactly the
@@ -729,9 +729,9 @@ compensating-differential, or \textbf{Rosen-motive}, component of firm pay.
 
 \paragraph{Can one identify the Rosen-motive share?} The share of firm-pay
 variance due to Rosen motives is $\var(\hat e_j)/\var(\log\psi_j)$. Computing it
-requires (i) data on $\bar V_j$---which is unobserved, but is exactly what Sorkin
+requires (i) data on $\bar V_j$ (unobserved, but exactly what Sorkin
 (2018) recovers from job-to-job flows via his PageRank/revealed-preference
-procedure---and (ii) the orthogonality assumption $\cov(\bar V_j,\log c_j)=0$,
+procedure) and (ii) the orthogonality assumption $\cov(\bar V_j,\log c_j)=0$,
 under which firm-pay variance splits cleanly into a vertical-quality piece
 (explained by $\bar V_j$) and a compensating-differential piece (the residual).
 This is the variance decomposition behind Sorkin's conclusion that roughly half
