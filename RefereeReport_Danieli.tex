@@ -1,0 +1,209 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parskip}{5pt}
+
+\newcommand{\eps}{\varepsilon}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Referee Report}\\[5pt]
+{\large Manuscript: ``Skill-Replacing Technology and Bottom-Half Inequality''}\\[3pt]
+{\normalsize Author: Oren Danieli}\\[7pt]
+{\small Prepared by Pablo Fiorentini \quad$\cdot$\quad EIEF Ph.D.\ Labour Economics (R.\ Saggio), 2026}
+\end{center}
+
+\noindent\hrulefill
+
+\section*{Summary of the contribution}
+
+The paper reframes routine-biased technological change (RBTC). In the canonical account
+(Autor--Levy--Murnane, 2003; Acemoglu--Autor, 2011), technology substitutes for routine
+\emph{workers}, and its wage effect within a routine occupation is skill-neutral. Danieli instead
+lets technology substitute for the \emph{skill used in routine tasks}, so that the return to skill
+\emph{within} routine occupations falls. The mechanism is disciplined by a single cross-partial,
+$\eps = \partial^2 \log \varphi_R / \partial\theta\,\partial\tau$, whose sign nests the three
+paradigms: skill-replacing ($\eps<0$), skill-neutral ($\eps=0$), and skill-enhancing ($\eps>0$)
+(Theorem~1). The object is micro-founded two ways---as task automation in which the type of RBTC
+is governed by the skill-intensity of the automated task (Appendix~B.1), and as a CES aggregator in
+which it is governed by the skill--technology elasticity (Appendix~B.2)---and extended to
+multidimensional skills (Appendix~B.3). The model delivers a genuinely non-monotonic, two-phase
+prediction for bottom-half inequality and, in doing so, rationalizes three facts that skill-neutral
+RBTC cannot: (i) why the relative decline was concentrated at the \emph{median} even though routine
+workers are dispersed across the whole bottom half; (ii) why that decline halted around 2000 while
+routine employment kept falling; and (iii) why \emph{average} routine wages barely moved despite
+large employment losses.
+
+Empirically the paper does two things. First, it derives and tests two new predictions---a falling
+return to skill and a falling \emph{level} of skill in routine occupations---using an interactive
+fixed-effects model (IFEM) on the PSID (1980--2017), instrumenting the noisy worker fixed effect
+with years of schooling. It finds a sharp, sustained decline in the routine return to skill
+(Figure~4: $\log\alpha_R$ falls by more than $0.7$, roughly a $50\%$ reduction from its 1987 peak)
+and a steady fall in average routine skill that pushes it below the manual level by around 2015
+(Figures~6--8). Second, it introduces a \emph{skewness decomposition}---the third moment of log wages
+split into within, between, and covariance components---which sidesteps the ignorability assumption
+underlying standard decompositions. On CPS-ORG data it attributes $93\%$ of the rise in skewness to
+occupational structure and $\sim\!78\%$ to the covariance component (the correlation between an
+occupation's wage level and its internal inequality)---the signature of SR-RBTC rather than of a
+skill-neutral price shock, which would load on the between component. The decomposition is a
+contribution of independent interest and is shipped as an R package.
+
+\section*{Overall assessment}
+
+This is a strong, original paper. The core idea is simple, unifying, and---once stated---compelling:
+a single sign restriction reorganizes a large and previously untidy set of polarization facts, and
+the two-phase, non-monotonic prediction is a real advance over the monotone comparative statics of
+skill-neutral RBTC. On top of the theory, the paper offers \emph{two} methodological contributions
+that will outlast the specific application: an IV-corrected IFEM for a setting with short panels, and
+the skewness decomposition. The writing is clear and the engagement with alternative explanations
+(institutions, minimum wage, unions, trade, service-demand shocks, rents, multi-skill models) is
+unusually thorough. I expect the paper to be publishable after a focused revision.
+
+The paper is transparent that it does not identify a \emph{causal} effect of technology---there is
+no exogenous variation in $\tau$---and that its claim is instead that a rich battery of facts is
+\emph{jointly consistent} with SR-RBTC and hard to reconcile with the skill-neutral benchmark. I
+evaluate it on those terms, which I think are the right ones. My comments below are therefore aimed
+at strengthening the identification narrative and the robustness of the headline magnitudes rather
+than at the contribution itself; none of them, in my view, threatens the core result. They are
+ordered roughly by importance.
+
+\section*{Main comments}
+
+\textbf{1. Strict exogeneity of mobility is in tension with the model's own mechanism.}
+The IFEM's consistency rests on strict exogeneity of occupational assignment (Eq.~28): the wage
+residual must be mean-independent of the full occupation history. But the central economic force in
+the model is precisely \emph{selective} mobility---high-skill routine workers optimally exit as their
+comparative advantage shifts (Theorems~3 and~5). Selection on comparative advantage is a textbook
+violation of the assumption the estimator needs. The sensitivity analysis (Appendix~D.2, following
+Andrews et al., 2017) is a valuable step and shows the \emph{within}-routine trend is driven almost
+entirely by routine stayers, with a bounded bias from a trending schooling--error correlation. My
+concern is that this bounds one channel (the instrument--error covariance) but not Roy-style
+selection on the \emph{transitory} wage component: if workers leave routine jobs when their
+idiosyncratic routine wage draw is poor, the wage--skill gradient estimated among stayers is a
+selected object even with $\theta_i$ held fixed. I would like the author to (a) state this tension
+explicitly, and (b) probe it---e.g.\ a selection/Heckman-style check on the stayer sample, a
+comparison of the $\alpha_{R,t}$ trend for cohorts with differing exit propensities, or bounds that
+allow the exit rule to depend on the transitory shock.
+
+\textbf{2. The incidental-parameters correction and inference in the IFEM.}
+The worker effect $\theta_i$ is estimated from a handful of observations, so $\hat\theta_i$ is a
+noisy, inconsistent estimate and its use as a regressor induces attenuation---the incidental-parameters
+problem the paper correctly flags (Lancaster, 2000; Bound et al., 1994). This is exactly the
+difficulty that the leave-out / limited-mobility-bias literature on two-way fixed-effects models was
+built to handle, and the paper would be strengthened by connecting to it: Andrews, Gill, Schank \&
+Upward (2008) on the direction and size of the bias, and Kline, Saggio \& S\o lvsten (2020) on
+leave-out estimation of variance components that are functions of estimated fixed effects. Three
+concrete requests. (a) \emph{Relate} the schooling-IV correction to a leave-out estimator: does the
+instrument remove the entire bias in $\alpha_{jt}$, or only the classical-measurement-error piece,
+leaving the correlated-error term (the second term in the D.1 probability limit) untouched? (b)
+\emph{Inference}: the main text does not say how the standard errors on $\alpha_{jt}$ are computed
+given that $\hat\theta_i$ is a generated regressor entering nonlinearly. A bootstrap over workers, or
+an analytic correction, should be described and the resulting confidence bands shown on Figures~4--5;
+the sharpness of the trend is doing a lot of work and readers need its precision. (c) A short Monte
+Carlo---simulate the model, estimate the IFEM with and without the IV---demonstrating that the
+procedure recovers a known $\alpha$ under short panels would be persuasive and is cheap.
+
+\textbf{3. A single instrument for a single skill index.}
+Identification of the return-to-skill trend hinges on schooling being uncorrelated with the wage
+residual conditional on $\theta_i$ (Eq.~10)---i.e.\ schooling affects wages only through the
+one-dimensional skill. This is strong in a paper whose whole premise is that the returns to
+\emph{different} skills move differently over time. If schooling also proxies, say, social or
+non-cognitive skills whose returns rose over this period (Deming, 2017), the estimated
+$\alpha_{R,t}$ trend is contaminated. The bound in D.2 is reassuring but leans on assumed magnitudes
+(a doubling of the residual--schooling coefficient over twenty years, $b\approx0.001$) that read as
+somewhat ad hoc; I would motivate those numbers from data, and, if possible, show the trend is robust
+to a second instrument or to conditioning on an early cognitive-score proxy. The multi-skill
+robustness (Appendices~D.3 and~G) partly addresses this, but by construction the IV still recovers
+only the return to skills \emph{correlated with schooling}; the paper should state that scope
+limitation where the main result is claimed, not only in the appendix.
+
+\textbf{4. From the covariance component to ``return to skill'': tighten the bridge between the two
+exercises.} The paper's most novel empirical claim is that the covariance component---not the
+between component---drives polarization, and that this reflects a falling within-occupation return
+to skill. The counterfactual in Figure~12 (Eq.~16)---which holds occupation shares and means at their
+1992 values and lets only the within-occupation variances move---reproduces essentially the entire
+rise in the covariance component; this convincingly establishes that the driver is within-occupation
+inequality \emph{compression} in low-wage occupations, not shifts in occupation means or employment
+shares, and it is a clean result. What remains is the last inferential step---from ``within-occupation
+inequality fell'' to ``the return to skill fell'' (as opposed to the surviving workers simply becoming
+more homogeneous in skill). The
+IFEM is the tool that discriminates these, but it is estimated on a \emph{different} dataset (PSID),
+at a \emph{different} level of aggregation (three broad categories), than the decomposition (CPS-ORG,
+3-digit). The headline mechanism therefore rests on bridging two exercises rather than on a single
+measurement. I would tie them together: for instance, show that the occupations where the IFEM
+$\alpha$ falls most are the same ones driving the counterfactual covariance in Figure~12, or estimate
+a coarser decomposition on PSID (and/or a coarser IFEM on CPS where feasible) so the two halves speak
+to the same units.
+
+\textbf{5. Skewness is tail-sensitive: report the robustness of the headline shares.}
+The third moment is more sensitive to the tails than the variance, yet hourly wages are trimmed at
+$5\%$ precisely because the tails are noisy---so the two design choices push against each other. The
+$93\%$ and $78\%$ shares are the paper's quantitative punchlines and their dependence on (i) the trim
+and (ii) the 1992--2002 window should be shown, not asserted. A small figure plotting the three
+component shares as a function of the trim (say $1\%$--$10\%$) and a table repeating the headline
+decomposition over alternative windows (the Autor--Dorn crosswalk period in Figure~A12 is a start,
+but the coding-change caveat there is exactly why a clean robustness panel would help) would settle
+this. The R package presumably makes this inexpensive.
+
+\textbf{6. Calibrate the language of the abstract to what the decomposition measures.}
+``SR-RBTC can explain 93 percent of the wage trends'' (abstract) is stronger than what is shown:
+$93\%$ of the rise in skewness is \emph{occupation-related}, which is an upper bound on the share
+attributable to \emph{all} occupation-based mechanisms---not only SR-RBTC but also, e.g.,
+occupation-specific de-unionization or the offshorability of tasks. The narrower
+$\sim\!78\%$ covariance component is the SR-RBTC-consistent piece, and even that is
+consistent-with rather than uniquely-attributable-to. Appendix~H's occupation-vs-industry/education
+decomposition is the right kind of evidence and does a lot to narrow the field; I would simply have
+the abstract and introduction state the claim as ``occupational structure accounts for 93\%, of which
+the covariance component consistent with SR-RBTC is 78\%,'' which is both accurate and still striking.
+
+\section*{Minor comments}
+
+\begin{itemize}
+\item \textbf{Quantitative discipline on the turning point.} The theory is qualitative (signs of
+derivatives), and the mapping of the two phases to ``late-1980s/1990s'' and ``2000s'' is asserted,
+with the reversal point read off the same data it explains. A calibration in which the model
+\emph{generates} the timing and magnitude of the $\sim\!2000$ turnaround---even a stylized one---would
+convert a rationalization into a test. I flag this as a ``would-strengthen,'' not a requirement.
+\item \textbf{Sales classification.} The paper departs from prior practice by not coding sales as
+routine and notes sales has an abstract-like return to skill. Since occupational coding is central to
+every result, please show the main decomposition and IFEM figures under the conventional
+(sales-as-routine) definition side by side, rather than only asserting the results are unaffected.
+\item \textbf{Manual vs.\ routine wage/skill inversion.} By the end of the sample, routine workers
+have lower measured skill than manual workers yet still earn more; this is patched with an experience
+differential (Autor--Dorn, 2009). Because the $\theta\!\to\!$wage mapping is the backbone of the
+argument, this residual should be shown directly (e.g.\ the experience gap that reconciles the two)
+rather than relegated to a footnote.
+\item \textbf{Make the load-bearing fact a figure.} Puzzle (i) depends on ``the highest-earning
+routine workers are located at the median of the overall distribution.'' This is currently supported
+by citation; given its importance it deserves its own figure in the main text.
+\item \textbf{External validity.} The bottom-half fluctuation appears to be essentially a US (and
+Israel) phenomenon, attributed to weaker US labour-market institutions. This is a reasonable defense,
+but it also means the SR-RBTC footprint is hard to detect elsewhere; a sentence acknowledging the
+resulting limit on out-of-sample testing would be honest.
+\item \textbf{Cross-occupation rank evidence (Appendix~G).} The rank correlations for
+category-switchers ($0.35$--$0.53$) are used to support one-dimensional skill, but movers are a
+selected sample and the correlations are not especially high; the $\theta_{ij}$ correlations
+($0.69$--$0.83$) are more supportive. I would lead with the latter and note the selection caveat on
+the former.
+\item \textbf{Typos / presentation.} ``was not applied \emph{to} economic data'' (Sec.~2.2);
+``orthong[on]al'' (Appendix~D.1); a few equation-rendering slips. Figure~1's polarization series and
+the skewness series (Figure~10) could usefully appear closer together, since the paper's opening
+argument is that they line up.
+\end{itemize}
+
+\section*{Recommendation}
+
+\textbf{Minor revision.} The contribution---the SR-RBTC reframing plus two portable
+methods---is novel and, in my judgment, publishable. The revision should focus on three things:
+(1) confront the tension between selective mobility and the IFEM's strict-exogeneity assumption, and
+report generated-regressor inference for $\alpha_{jt}$ (comments~1--2); (2) tie the IFEM and the
+skewness decomposition to the same occupational units so the headline mechanism rests on one
+measurement rather than a bridge across datasets (comment~4); and (3) calibrate the language of the
+abstract, and add the trim/window robustness for the decomposition shares (comments~5--6). None of
+these requires new data or a redesign, and I would be glad to see a revised version.
+
+\end{document}
